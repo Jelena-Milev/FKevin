@@ -1,0 +1,185 @@
+Q1: Difficulty: Low
+Koja kompanija proizvodi Mac racunare?
+Apple
+
+Q2: Difficulty: Low
+Šta je izašlo prvo, iPhone ili iPad?
+iPhone
+
+Q3: Difficulty: Low
+Koji od ponudjenih uredjaja je ulazni uredjaj?
+a)Miš*
+b)Procesor
+c)Štampac
+d)Graficka kartica
+
+Q4: Difficulty: Low
+Koje cifre se koriste u binarnom sistemu?
+1 i 0
+
+Q5: Difficulty: Low
+Kojom kombinacijom dugmica mozemo doci do Windows Task Managera?
+Ctrl+Alt+Delete
+
+Q6: Difficulty: Low
+Koji programski jezik nije jezik za web programiranje?
+a)Javascript
+b)HTML
+c)C++ *
+d)PHP
+
+Q7: Difficulty: Low
+Koji programski jezik nije jezik za programiranje softvera?
+a) C
+b) HTML *
+c) Visual Basic
+d) C++
+
+Q8: Difficulty: Low
+Koja geometrijska figura oznacava uslov na dijagramu algoritma?
+Romb
+
+Q9: Difficulty: Low
+3KB=__B?
+3072
+
+Q10: Difficulty: Low
+Zaokruziti tacan odgovor: 
+a) 1GB je 1024KB
+
+b) 1MB je 1024GB
+
+c) 1KB je 1024MB
+
+d) 1GB je 1024MB
+*
+
+Q11: Difficulty: Low
+Kojim znakom se dobija ostatak pri deljenju u programskom jeziku C?
+%
+
+Q12: Difficulty: Low
+U html-u <h2> je tag za:
+a) velicinu proreda
+
+b) velicinu naslova
+*
+c) boldovan tekst
+
+d) precrtan tekst
+
+Q13: Difficulty: Low
+HTML je skracenica za:
+a) Home Tool Markup Language
+
+b) Hyperlinks and Text Markup Language
+
+c) HyperText Markup Language
+*
+d) Hyper Tool Markup Language
+
+Q14: Difficulty: Low
+Koji karakter se koristi u HTML-u kao oznaka završnog taga:
+a) *
+
+b) <
+
+c) ^
+
+d) / *
+
+Q15: Difficulty: Low
+Šta od ponudenog nije operativni sistem:
+a) MAC
+b) Windows
+c) Python
+d) DOS
+
+Q16: Difficulty: Low
+Koji je broj funkcijskih dugmica na standardnoj tastaturi?
+12
+
+Q17: Difficulty: Low
+Virus je kompjuterski:
+a) Program *
+b) Fajl
+c) Folder
+d) Bag
+
+
+Q18: Difficulty: Low
+Kako se zove Super Mariov brat?
+a) Wario
+b) Waluigi
+c) Luigi *
+d) Marmi
+
+Q19: Difficulty: Low
+Originalni Counter Strike je mod za koju igricu?
+Half Life
+
+Q20: Difficulty: Low
+Originalna DOTA je mod za koju igricu?
+Warcraft III
+
+Q21: Difficulty: Low
+Ako funkcija napisana u Javi ne vraca ništa, u njenom potpisu pre naziva piše se?
+void
+
+Q22: Difficulty: Low
+
+Q23: Difficulty: Low
+
+Q24: Difficulty: Low
+
+Q25: Difficulty: Low
+
+Q26: Difficulty: Low
+
+Q27: Difficulty: Low
+
+Q28: Difficulty: Low
+
+Q29: Difficulty: Low
+
+Q30: Difficulty: Low
+
+Q31: Difficulty: Low
+
+Q32: Difficulty: Low
+
+Q33: Difficulty: Low
+
+Q34: Difficulty: Low
+
+Q35: Difficulty: Low
+
+Q36: Difficulty: Low
+
+Q37: Difficulty: Low
+
+Q38: Difficulty: Low
+
+Q39: Difficulty: Low
+
+Q40: Difficulty: Low
+
+Q41: Difficulty: Low
+
+Q42: Difficulty: Low
+
+Q43: Difficulty: Low
+
+Q44: Difficulty: Low
+
+Q45: Difficulty: Low
+
+Q46: Difficulty: Low
+
+Q47: Difficulty: Low
+
+Q48: Difficulty: Low
+
+Q49: Difficulty: Low
+
+Q50: Difficulty: Low
