@@ -11,11 +11,11 @@ public class Question {
         Open, Closed
     }
 
+    private questionType type;
     private String questionText;
     private String correctAnswer;
     private LinkedList<String> possibleAnswers;
     private questionDifficulty difficulty;
-    private questionType type;
 
     public Question(){
     }
