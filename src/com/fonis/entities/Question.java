@@ -3,11 +3,11 @@ package com.fonis.entities;
 import java.util.LinkedList;
 
 public class Question {
-    private enum questionDifficulty{
+    public enum questionDifficulty{
         Low, Medium, High
     }
-
-    private enum questionType{
+    //closed questions are pick an answers questions and open questions are fill in questions
+    public enum questionType{
         Open, Closed
     }
 
@@ -17,14 +17,6 @@ public class Question {
     private questionDifficulty difficulty;
     private questionType type;
 
-    public Question(String questionText, String correctAnswer, LinkedList<String> possibleAnswers, questionDifficulty difficulty, questionType type) {
-        this.questionText = questionText;
-        this.correctAnswer = correctAnswer;
-        this.possibleAnswers = possibleAnswers;
-        this.difficulty = difficulty;
-        this.type = type;
-    }
-
     public Question(){
     }
 
@@ -33,7 +25,7 @@ public class Question {
     }
 
     public void setQuestionText(String questionText) {
-        if(questionText.isEmpty())
+        if(questionText==null || questionText.isEmpty())
             throw new RuntimeException("Question text have to be entered!");
         this.questionText = questionText;
     }
@@ -43,7 +35,7 @@ public class Question {
     }
 
     public void setCorrectAnswer(String correctAnswer) {
-        if(correctAnswer.isEmpty())
+        if(correctAnswer==null || correctAnswer.isEmpty())
             throw new RuntimeException("The correct answer have to be entered!");
         this.correctAnswer = correctAnswer;
     }
@@ -53,16 +45,29 @@ public class Question {
     }
 
     public void setPossibleAnswers(LinkedList<String> possibleAnswers) {
-        if(possibleAnswers==null)
-            throw new RuntimeException("There is no possible answers entered!");
-        int indexOfNullAnswer=possibleAnswers.indexOf(null);
-        if(indexOfNullAnswer!=-1)
-            throw new RuntimeException("Possible answer at index "+indexOfNullAnswer+" is null!");
-        if(possibleAnswers.size()<3)
-            throw new RuntimeException("List with possible answers have to contain at least 3 possible answers!");
-        int indexOfCorrectAnswer=possibleAnswers.indexOf(correctAnswer);
-        if(indexOfCorrectAnswer!=-1)
-            throw new RuntimeException("Possible answer at index "+indexOfCorrectAnswer+" is the correct answer! List with possible answers cannot contain correct answer!");
+        if(type==questionType.Open){
+            if(possibleAnswers!=null && possibleAnswers.size()>0)
+             throw new RuntimeException("Check again, open questions cannot have offered answers to choose one of them!");
+        }
+        else {
+            int indexOfInvalidAnswer;
+            if (possibleAnswers == null)
+                throw new RuntimeException("There is no possible answers entered!");
+            if (possibleAnswers.size() < 3)
+                throw new RuntimeException("List with possible answers have to contain at least 3 possible answers!");
+            indexOfInvalidAnswer = possibleAnswers.indexOf(null);
+            if (indexOfInvalidAnswer != -1)
+                throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is null!");
+            indexOfInvalidAnswer=possibleAnswers.indexOf("");
+            if(indexOfInvalidAnswer != -1)
+                throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is an empty answer!");
+            indexOfInvalidAnswer = possibleAnswers.indexOf(correctAnswer);
+            if (indexOfInvalidAnswer != -1)
+                throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is the correct answer! List with possible answers cannot contain correct answer!");
+            indexOfInvalidAnswer=duplicatedAnswer(possibleAnswers);
+            if(indexOfInvalidAnswer != -1)
+                throw new RuntimeException("Possible answer at index "+indexOfInvalidAnswer+" has a duplicate amongst other answers!");
+        }
         this.possibleAnswers = possibleAnswers;
     }
 
@@ -85,5 +90,27 @@ public class Question {
             throw new RuntimeException("Type of the question have to be entered!");
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionText='" + questionText + '\'' +
+                ", correctAnswer='" + correctAnswer + '\'' +
+                ", possibleAnswers=" + possibleAnswers +
+                ", difficulty=" + difficulty +
+                ", type=" + type +
+                '}';
+    }
+
+    private int duplicatedAnswer(LinkedList<String> answers){
+        for (int i=0;i<answers.size()-1;i++){
+            for(int j=i+1;j<answers.size();j++){
+                if(answers.get(i).equalsIgnoreCase(answers.get(j)))
+                    return i;
+            }
+        }
+        return -1;
+    }
+
 
 }
