@@ -1,6 +1,7 @@
 package com.fonis.entities;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Question {
     public enum questionDifficulty{
@@ -100,6 +101,23 @@ public class Question {
                 ", difficulty=" + difficulty +
                 ", type=" + type +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question = (Question) o;
+        return type == question.type &&
+                questionText.equalsIgnoreCase(question.questionText) &&
+                correctAnswer.equalsIgnoreCase(question.correctAnswer) &&
+                Objects.equals(possibleAnswers, question.possibleAnswers) &&
+                difficulty == question.difficulty;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, questionText, correctAnswer, possibleAnswers, difficulty);
     }
 
     private int duplicatedAnswer(LinkedList<String> answers){
