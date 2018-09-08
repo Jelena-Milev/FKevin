@@ -3,6 +3,7 @@ package com.fonis.entities;
 public class Participant{
     private String name;
     private String surname;
+    private String email;
     private String phoneNumber;
     private int totalPoints;
 
@@ -43,5 +44,13 @@ public class Participant{
 
     public void setTotalPoints(int totalPoints){
         this.totalPoints = totalPoints;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
     }
 }
