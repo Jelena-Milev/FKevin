@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Added functionality: for loading all questions from JSON file, adding a new question to JSON file, and removing existing question from JSON file. Functionality for editing existing questions will be added soon.">
-      <change afterPath="$PROJECT_DIR$/data/questions.json" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="The way of saving questions into .json file improved.&#10;&#10;Functionality for loading questions from .json file into List or JsonArray, adding to and removing from .json file tested for cases:&#10;-.json file is empty;&#10;-.json file is not empty but the JsonObject in it does not have property named &quot;Questions&quot;;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is empty array;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is array that is not empty (and contains or does not contain the question given - for adding and removing functionality).">
       <change afterPath="$PROJECT_DIR$/src/test/QuestionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/questions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fonis/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/entities/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fonis/services/ParsingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/services/ParsingService.java" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
     <session id="-218865175">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -75,10 +75,11 @@
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.66" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -90,31 +91,31 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="7" />
-          <entry key="java" value="9" />
-          <entry key="json" value="22" />
-          <entry key="txt" value="5" />
+          <entry key="java" value="11" />
+          <entry key="json" value="25" />
+          <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="9" />
-          <entry key="JSON" value="22" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="JAVA" value="11" />
+          <entry key="JSON" value="25" />
+          <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="47" />
-          <entry key="java" value="5099" />
-          <entry key="json" value="11" />
-          <entry key="txt" value="624" />
+          <entry key="java" value="9533" />
+          <entry key="json" value="199" />
+          <entry key="txt" value="1228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5099" />
-          <entry key="JSON" value="11" />
-          <entry key="PLAIN_TEXT" value="671" />
+          <entry key="JAVA" value="9533" />
+          <entry key="JSON" value="199" />
+          <entry key="PLAIN_TEXT" value="1275" />
         </counts>
       </usages-collector>
     </session>
@@ -127,29 +128,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Question.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="112" column="47" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
+            <state relative-caret-position="207">
+              <caret line="135" column="1" lean-forward="true" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4461#4462#0" expanded="true" />
-                <element signature="e#4560#4561#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/questions.json">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="117">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+              <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,12 +153,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/QuestionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+            <state relative-caret-position="98">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#557#634#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/questions.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -206,9 +209,9 @@
         <option value="$PROJECT_DIR$/src/test/question.json" />
         <option value="$PROJECT_DIR$/src/test/questions.json" />
         <option value="$PROJECT_DIR$/src/com/fonis/entities/Question.java" />
-        <option value="$PROJECT_DIR$/src/com/fonis/services/ParsingService.java" />
         <option value="$PROJECT_DIR$/src/test/QuestionTest.java" />
         <option value="$PROJECT_DIR$/data/questions.json" />
+        <option value="$PROJECT_DIR$/src/com/fonis/services/ParsingService.java" />
       </list>
     </option>
   </component>
@@ -245,9 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,6 +294,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,7 +307,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536274715562" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536367719773" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/gson-2.8.2.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -465,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536166687220</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added functionality: &#10; for loading all questions from JSON file, adding a new question to JSON file, and removing existing question from JSON file. Functionality for editing existing questions will be added soon.">
+      <created>1536275334188</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536275334188</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -475,8 +485,8 @@
     <frame x="0" y="35" width="1366" height="733" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8172839" visible="true" weight="0.2560606" />
-      <window_info id="Structure" order="1" sideWeight="0.18271606" side_tool="true" visible="true" weight="0.2560606" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7241379" weight="0.18257576" />
+      <window_info id="Structure" order="1" sideWeight="0.27586207" side_tool="true" weight="0.18257576" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
@@ -484,18 +494,18 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289256" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848485" weight="0.32066116" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46115702" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969697" weight="0.047933884" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848485" weight="0.1785124" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Profiler" order="8" />
       <window_info anchor="bottom" id="Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50151515" side_tool="true" weight="0.17520662" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50151515" side_tool="true" weight="0.46115702" />
       <window_info anchor="bottom" id="Problems" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49772727" weight="0.43305784" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.3305785" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.63560605" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" sideWeight="0.7507576" visible="true" weight="0.3305785" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="15" weight="0.3305785" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -507,8 +517,8 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" side_tool="true" weight="0.32954547" />
-      <window_info anchor="right" x="0" y="0" width="291" height="533" id="Documentation" order="10" sideWeight="0.5012285" side_tool="true" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="291" height="533" id="Documentation" order="9" sideWeight="0.5012285" side_tool="true" weight="0.55530304" />
+      <window_info anchor="right" id="Maven Projects" order="10" side_tool="true" weight="0.32954547" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,6 +535,20 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </option>
+                  </UserGroup>
+                  <UserGroup>
+                    <option name="users">
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </option>
+                  </UserGroup>
                   <UserGroup>
                     <option name="users">
                       <list>
@@ -577,7 +601,21 @@
     <MESSAGE value="Library gson 2.8.2 added. ParsingService class for parsing functionality added." />
     <MESSAGE value="Library gson-2.8.2.jar uploaded." />
     <MESSAGE value="Added functionality: for loading all questions from JSON file, adding a new question to JSON file, and removing existing question from JSON file. Functionality for editing existing questions will be added soon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality: for loading all questions from JSON file, adding a new question to JSON file, and removing existing question from JSON file. Functionality for editing existing questions will be added soon." />
+    <MESSAGE value="Added functionality: &#10; for loading all questions from JSON file, adding a new question to JSON file, and removing existing question from JSON file. Functionality for editing existing questions will be added soon." />
+    <MESSAGE value="The way of saving questions into .json file improved.&#10;&#10;Functionality for loading questions from .json file into List or JsonArray, adding to and removing from .json file tested for cases:&#10;-.json file is empty;&#10;-.json file is not empty but the JsonObject in it does not have property named &quot;Questions&quot;;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is empty array;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is array that is not empty (and contains or does not contain the question given - for adding and removing functionality)." />
+    <option name="LAST_COMMIT_MESSAGE" value="The way of saving questions into .json file improved.&#10;&#10;Functionality for loading questions from .json file into List or JsonArray, adding to and removing from .json file tested for cases:&#10;-.json file is empty;&#10;-.json file is not empty but the JsonObject in it does not have property named &quot;Questions&quot;;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is empty array;&#10;-.json file is not empty and the JsonObject in it has property named &quot;Questions&quot; which value is array that is not empty (and contains or does not contain the question given - for adding and removing functionality)." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/QuestionTest.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -614,59 +652,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/jsonproba.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/question.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/question.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/jsonproba.json" />
+    <entry file="file://$PROJECT_DIR$/src/test/question.json" />
+    <entry file="file://$PROJECT_DIR$/data/question.json" />
     <entry file="file://$PROJECT_DIR$/src/test/questions.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Quiz Questions - Low Diff.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-end-line="16" selection-end-column="41" />
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="112" column="47" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
+        <state relative-caret-position="207">
+          <caret line="135" column="1" lean-forward="true" selection-start-line="135" selection-start-column="1" selection-end-line="135" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4461#4462#0" expanded="true" />
-            <element signature="e#4560#4561#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/QuestionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+        <state relative-caret-position="98">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#557#634#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/questions.json">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
           </folding>
         </state>
       </provider>
