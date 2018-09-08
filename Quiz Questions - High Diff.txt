@@ -1,0 +1,158 @@
+Q1: Difficulty: High
+U kojim od ponudjenih jezika NIJE napisan Android?
+a) Python  *
+b) Java
+c) C
+d) C++
+
+Q2: Difficulty: High
+DNS je skracenica za:
+a) Domain Name System*
+b) Domain Name Server
+c) Dynamic Name System
+d) Dynamic Name Server
+
+Q3: Difficulty: High
+TCP je skracenica za: 
+a) Transmision Control Protocol*
+b) Transfer Control Protocol
+c) Transfer Communication Protocol
+d) Transmision Communication Protocol
+
+Q4: Difficulty: High
+Kako se zove polu telefon polu konzola koju je Nokia proizvodila pocetkom 21og veka?
+NGage
+
+Q5: Difficulty: High
+Koja od sledecih poslastica NIJE naziv verzije Android operativnog sistema?
+a) Lollipop
+b) KitKat
+c) Mars *
+d) Oreo
+
+Q6: Difficulty: High
+Šta znaci skracenica OIKT?
+Osnove Informaciono Komunikacionih Tehnologija
+
+Q7: Difficulty: High
+HTML element za prelom reda je: 
+a) <break>
+b) <br>*
+c) <lb>
+d) <line>
+
+Q8: Difficulty: High
+Ispravan HTML kod za boju pozadine je:
+a) <background>yellow</background>
+b) <body style=""background-color:yellow;"">  *
+c) <body bg=""yellow"">
+d) <body_background=""yellow"">
+
+Q9: Difficulty: High
+Ispravan HTML kod za hiperlink je:
+a) <a url=""http://www.w3schools.com"">W3Schools.com</a>
+b) <a>http://www.w3schools.com</a>
+c) <a name=""http://www.w3schools.com"">W3Schools.com</a>
+d) <a href=""http://www.w3schools.com"">W3Schools</a> *
+
+Q10: Difficulty: High
+Koji tag u HTML-u se koristi za kreiranje numerisane liste:
+a) <ul>
+b) <ol>  *
+c) <dl>
+d) <list>
+
+Q11: Difficulty: High
+Koji tag u HTML-u se koristi za kreiranje nenumerisane liste:
+a) <ul>*
+b) <ol>  
+c) <dl>
+d) <list>
+
+Q12: Difficulty: High
+Šta je ispravan HTML kod za kreiranje checkbox-a?
+a) <checkbox>
+b) <textinput type=""checkbox"">
+c) <input type=""checkbox"">*
+d) <check>
+
+Q13: Difficulty: High
+Šta je ispravan HTML kod za kreiranje textfield-a?
+a) <textfield> 
+b) <input type=""textfield""> *
+c) <input type=""textfl"">
+d) <textinput type=""text"">"
+
+Q14: Difficulty: High
+Nabroj jedan HTML tag koji ne mora da se zatvara:
+<br>
+
+Q15: Difficulty: High
+Keš memorija radi sporije od?
+a) RAM memorije
+b) ROM memorije
+c) Keš memorije
+d) Registara *
+
+Q16: Difficulty: High
+Folderi u operativnom sistemu su hijerarhijski organizovani kao:
+a) Red
+b) Stek
+c) Stablo *
+d) Lista
+
+Q17: Difficulty: High
+Koliko bitova koristi IPv6 adresa?
+128
+
+Q18: Difficulty: High
+IoT je skracenica za?
+Internet of Things
+
+Q19: Difficulty: High
+Kada je izašao prvi x86 procesor?
+a) 1972
+b) 1978 *
+c) 1990
+d) 1980
+
+Q20: Difficulty: High
+Koliko programskih jezika je trenutno u upotrebi?
+a) 2000 *
+b) 1000
+c) 500
+d) 100
+
+Q21: Difficulty: High
+U kom veku je osnovan Nintendo?
+19.
+
+Q22: Difficulty: High
+Šta od ponuđenog predstavlja framework?
+a) Bootstrap *
+b) HTML
+c) CSS
+d) IoT
+
+Q23: Difficulty: High
+Koja od ponuđenih linija koda ima grešku?
+a) scanf("%d",&br);
+b) printf("%d",&br);
+c) scanf("%d",br); *
+d) printf("%d",br);
+
+Q24: Difficulty: High
+Koja kompanija je kupila kompaniju Motorola?
+Lenovo
+
+Q25: Difficulty: High
+
+Q26: Difficulty: High
+
+Q27: Difficulty: High
+
+Q28: Difficulty: High
+
+Q29: Difficulty: High
+
+Q30: Difficulty: High

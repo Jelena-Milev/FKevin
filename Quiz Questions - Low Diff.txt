@@ -3,14 +3,14 @@ Koja kompanija proizvodi Mac racunare?
 Apple
 
 Q2: Difficulty: Low
-äta je izaölo prvo, iPhone ili iPad?
+≈†ta je iza≈°lo prvo, iPhone ili iPad?
 iPhone
 
 Q3: Difficulty: Low
 Koji od ponudjenih uredjaja je ulazni uredjaj?
-a)Miö*
+a)Mi≈°*
 b)Procesor
-c)ätampac
+c)≈†tampac
 d)Graficka kartica
 
 Q4: Difficulty: Low
@@ -46,13 +46,9 @@ Q9: Difficulty: Low
 Q10: Difficulty: Low
 Zaokruziti tacan odgovor: 
 a) 1GB je 1024KB
-
 b) 1MB je 1024GB
-
 c) 1KB je 1024MB
-
-d) 1GB je 1024MB
-*
+d) 1GB je 1024MB*
 
 Q11: Difficulty: Low
 Kojim znakom se dobija ostatak pri deljenju u programskom jeziku C?
@@ -61,35 +57,26 @@ Kojim znakom se dobija ostatak pri deljenju u programskom jeziku C?
 Q12: Difficulty: Low
 U html-u <h2> je tag za:
 a) velicinu proreda
-
-b) velicinu naslova
-*
+b) velicinu naslova*
 c) boldovan tekst
-
 d) precrtan tekst
 
 Q13: Difficulty: Low
 HTML je skracenica za:
 a) Home Tool Markup Language
-
 b) Hyperlinks and Text Markup Language
-
-c) HyperText Markup Language
-*
+c) HyperText Markup Language*
 d) Hyper Tool Markup Language
 
 Q14: Difficulty: Low
-Koji karakter se koristi u HTML-u kao oznaka zavrönog taga:
+Koji karakter se koristi u HTML-u kao oznaka zavr≈°nog taga:
 a) *
-
 b) <
-
 c) ^
-
 d) / *
 
 Q15: Difficulty: Low
-äta od ponudenog nije operativni sistem:
+≈†ta od ponudenog nije operativni sistem:
 a) MAC
 b) Windows
 c) Python
@@ -123,26 +110,54 @@ Originalna DOTA je mod za koju igricu?
 Warcraft III
 
 Q21: Difficulty: Low
-Ako funkcija napisana u Javi ne vraca niöta, u njenom potpisu pre naziva piöe se?
+Ako funkcija napisana u Javi ne vraca ni≈°ta, u njenom potpisu pre naziva pi≈°e se?
 void
 
 Q22: Difficulty: Low
+Koja je trenutno aktuelna Sonijeva konzola?
+PlayStation 4
 
 Q23: Difficulty: Low
+Koja je trenutno aktuelna Majkrosoftova konzola?
+Xbox One
 
 Q24: Difficulty: Low
+Koja je trenutno aktuelna Nintendova konzola?
+Nintendo Switch
 
 Q25: Difficulty: Low
+Koja osnovna SQL naredba se koristi za brisanje odreƒëenih podataka?
+DELETE
 
 Q26: Difficulty: Low
+Koja osnovna SQL naredba se koristi za uzimanje odreƒëenih podataka?
+SELECT
 
 Q27: Difficulty: Low
+Koja osnovna SQL naredba se koristi za promenu odreƒëenih podataka?
+UPDATE
 
 Q28: Difficulty: Low
+.gif je ekstenzija za:
+a) Image fajl *
+b) Audio fajl
+c) Video fajl
+d) Word fajl
 
 Q29: Difficulty: Low
+Koliki je limit karaktera za jedan tvit?
+a) 130
+b) 140 *
+c) 150 
+d) 160
 
 Q30: Difficulty: Low
+Koji od ponudjenih programskih jezika je najstariji?
+a) Java
+b) C *
+c) Python
+d) Juliet
+
 
 Q31: Difficulty: Low
 

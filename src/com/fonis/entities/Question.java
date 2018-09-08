@@ -1,23 +1,25 @@
 package com.fonis.entities;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Question {
-    public enum questionDifficulty{
+    public enum questionDifficulty {
         Low, Medium, High
     }
+
     //closed questions are pick an answers questions and open questions are fill in questions
-    public enum questionType{
+    public enum questionType {
         Open, Closed
     }
 
+    private questionType type;
     private String questionText;
     private String correctAnswer;
     private LinkedList<String> possibleAnswers;
     private questionDifficulty difficulty;
-    private questionType type;
 
-    public Question(){
+    public Question() {
     }
 
     public String getQuestionText() {
@@ -25,7 +27,7 @@ public class Question {
     }
 
     public void setQuestionText(String questionText) {
-        if(questionText==null || questionText.isEmpty())
+        if (questionText == null || questionText.isEmpty())
             throw new RuntimeException("Question text have to be entered!");
         this.questionText = questionText;
     }
@@ -35,7 +37,7 @@ public class Question {
     }
 
     public void setCorrectAnswer(String correctAnswer) {
-        if(correctAnswer==null || correctAnswer.isEmpty())
+        if (correctAnswer == null || correctAnswer.isEmpty())
             throw new RuntimeException("The correct answer have to be entered!");
         this.correctAnswer = correctAnswer;
     }
@@ -45,11 +47,10 @@ public class Question {
     }
 
     public void setPossibleAnswers(LinkedList<String> possibleAnswers) {
-        if(type==questionType.Open){
-            if(possibleAnswers!=null && possibleAnswers.size()>0)
-             throw new RuntimeException("Check again, open questions cannot have offered answers to choose one of them!");
-        }
-        else {
+        if (type == questionType.Open) {
+            if (possibleAnswers != null && possibleAnswers.size() > 0)
+                throw new RuntimeException("Check again, open questions cannot have offered answers to choose one of them!");
+        } else {
             int indexOfInvalidAnswer;
             if (possibleAnswers == null)
                 throw new RuntimeException("There is no possible answers entered!");
@@ -58,15 +59,15 @@ public class Question {
             indexOfInvalidAnswer = possibleAnswers.indexOf(null);
             if (indexOfInvalidAnswer != -1)
                 throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is null!");
-            indexOfInvalidAnswer=possibleAnswers.indexOf("");
-            if(indexOfInvalidAnswer != -1)
+            indexOfInvalidAnswer = possibleAnswers.indexOf("");
+            if (indexOfInvalidAnswer != -1)
                 throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is an empty answer!");
             indexOfInvalidAnswer = possibleAnswers.indexOf(correctAnswer);
             if (indexOfInvalidAnswer != -1)
                 throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " is the correct answer! List with possible answers cannot contain correct answer!");
-            indexOfInvalidAnswer=duplicatedAnswer(possibleAnswers);
-            if(indexOfInvalidAnswer != -1)
-                throw new RuntimeException("Possible answer at index "+indexOfInvalidAnswer+" has a duplicate amongst other answers!");
+            indexOfInvalidAnswer = duplicatedAnswer(possibleAnswers);
+            if (indexOfInvalidAnswer != -1)
+                throw new RuntimeException("Possible answer at index " + indexOfInvalidAnswer + " has a duplicate amongst other answers!");
         }
         this.possibleAnswers = possibleAnswers;
     }
@@ -76,7 +77,7 @@ public class Question {
     }
 
     public void setDifficulty(questionDifficulty difficulty) {
-        if(difficulty==null)
+        if (difficulty == null)
             throw new RuntimeException("Difficulty of the question have to be entered!");
         this.difficulty = difficulty;
     }
@@ -86,7 +87,7 @@ public class Question {
     }
 
     public void setType(questionType type) {
-        if(type==null)
+        if (type == null)
             throw new RuntimeException("Type of the question have to be entered!");
         this.type = type;
     }
@@ -102,15 +103,34 @@ public class Question {
                 '}';
     }
 
-    private int duplicatedAnswer(LinkedList<String> answers){
-        for (int i=0;i<answers.size()-1;i++){
-            for(int j=i+1;j<answers.size();j++){
-                if(answers.get(i).equalsIgnoreCase(answers.get(j)))
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question = (Question) o;
+        return type == question.type &&
+                questionText.equalsIgnoreCase(question.questionText) &&
+                correctAnswer.equalsIgnoreCase(question.correctAnswer) &&
+                Objects.equals(possibleAnswers, question.possibleAnswers) &&
+                difficulty == question.difficulty;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, questionText, correctAnswer, possibleAnswers, difficulty);
+    }
+
+    private int duplicatedAnswer(LinkedList<String> answers) {
+        for (int i = 0; i < answers.size() - 1; i++) {
+            for (int j = i + 1; j < answers.size(); j++) {
+                if (answers.get(i).equalsIgnoreCase(answers.get(j)))
                     return i;
             }
         }
         return -1;
     }
+
+
 
 
 }
