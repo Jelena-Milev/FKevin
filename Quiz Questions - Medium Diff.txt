@@ -29,30 +29,23 @@ d)Steve Wozniak *
 
 Q6: Difficulty: Medium
 Ko je bio Harald Bluetooth?
-a) Danski kralj u 10. veku
-
+a) Danski kralj u 10. veku *
 b) Programer komapnije Intel
-
 c)Jedan od tvoraca bluetooth tehnologije
-
 d) Indijanski poglavica
 
 Q7: Difficulty: Medium
 (Zaokruziti tacan odgovor:)
 Primarni kljuc: 
 a) Mora biti jedinstven za svaku relaciju u bazi
-
 b) Mora biti jedinstven za svaki slog u relaciji *
 c) Povezuje dve relacije
-
 d) Ne mora postojati za svaki slog u relaciji
 
 Q8: Difficulty: Medium
 Koja kompanija je kreirala igru Top Eleven Football Manager?
 a) Nintendo
-
 b) Sega
-
 c) Nordeus *
 d) Ubisoft
 
@@ -61,11 +54,8 @@ Ako je
 x mod 2 <> 0 
 onda je ceo broj x: 
 a) pozitivan
-
 b) negativan
-
 c) paran
-
 d) neparan *
 
 Q10: Difficulty: Medium
@@ -86,22 +76,19 @@ Znak dodele vrednosti u programskom jeziku Pascal je?
 Q13: Difficulty: Medium
 HTML element za najveci naslov je: 
 a) <h6>
-
-b) <h1>
-
+b) <h1> *
 c) <head>
-
 d) <heading>
 
 Q14: Difficulty: Medium
 Framework se u racunaru koristi za:
 a)Prenos podataka
-b)Zaötitu *
+b)Za≈°titu *
 c)Autentikaciju
 d)Dizanje sistema
 
 Q15: Difficulty: Medium
-Koji se od sledecih programskih jezika koristi za veötacku inteligenciju
+Koji se od sledecih programskih jezika koristi za ve≈°tacku inteligenciju
 a) C
 b) Java
 c) J2EE
@@ -115,14 +102,14 @@ c)SMTP *
 d)SSH
 
 Q17: Difficulty: Medium
-Koji kompjuterski program sluûi za prebacivanje asemblerskog jezika u maöinski jezik?
+Koji kompjuterski program slu≈æi za prebacivanje asemblerskog jezika u ma≈°inski jezik?
 a)Interpreter
 b)Kompajler
 c)Asembler
 d)Komparator
 
 Q18: Difficulty: Medium
-äta je vece, heksadecimalno F, ili binarno 1000?
+≈†ta je vece, heksadecimalno F, ili binarno 1000?
 F
 
 Q19: Difficulty: Medium
@@ -140,12 +127,32 @@ c)Xerox
 d)IBM *
 
 Q21: Difficulty: Medium
+Koji od ponuƒëenih web browsera je najstariji?
+a) Mozila
+b) Nexus *
+c) Chrome
+d) Internet Explorer
 
 Q22: Difficulty: Medium
+Jedno polje u Excel-u se naziva:
+a) Box
+b) Cell *
+c) Tab
+d) Field
 
 Q23: Difficulty: Medium
+Binarna vrednost heksadecimalnog A je?
+a) 01010011
+b) 10101010
+c) 00001111
+d) 00010000 *
 
 Q24: Difficulty: Medium
+Koji od ponuƒëenih je najnoviji Windows?
+a) Windows ME
+b) Windows 95
+c) Windows XP
+d) Windows Vista *
 
 Q25: Difficulty: Medium
 
