@@ -1,0 +1,180 @@
+Q1: Difficulty: Medium
+Koji se od navedenih alata koristi za pravljenje sajtova, prvenstveno blogova?
+a)WordPress *
+b)Sql
+c)C
+d)Google Drive
+
+Q2: Difficulty: Medium
+Koja komanda se koristi u programskom jeziku C za zavrsetak programa?
+a) return *
+b) end
+c) finish
+d) kevin
+
+Q3: Difficulty: Medium
+Koja je najveca cifra u heksadecimalnom sistemu?
+F
+
+Q4: Difficulty: Medium
+Koja je vrednost heksadecimalne cifre E u dekadnom sistemu?
+14
+
+Q5: Difficulty: Medium
+Sa kim je Steve Jobs osnovao kompaniju Apple?
+a)Bill Gates
+b)Ken Arnold
+c)Dennis Ritchie
+d)Steve Wozniak *
+
+Q6: Difficulty: Medium
+Ko je bio Harald Bluetooth?
+a) Danski kralj u 10. veku
+
+b) Programer komapnije Intel
+
+c)Jedan od tvoraca bluetooth tehnologije
+
+d) Indijanski poglavica
+
+Q7: Difficulty: Medium
+(Zaokruziti tacan odgovor:)
+Primarni kljuc: 
+a) Mora biti jedinstven za svaku relaciju u bazi
+
+b) Mora biti jedinstven za svaki slog u relaciji *
+c) Povezuje dve relacije
+
+d) Ne mora postojati za svaki slog u relaciji
+
+Q8: Difficulty: Medium
+Koja kompanija je kreirala igru Top Eleven Football Manager?
+a) Nintendo
+
+b) Sega
+
+c) Nordeus *
+d) Ubisoft
+
+Q9: Difficulty: Medium
+Ako je 
+x mod 2 <> 0 
+onda je ceo broj x: 
+a) pozitivan
+
+b) negativan
+
+c) paran
+
+d) neparan *
+
+Q10: Difficulty: Medium
+Ako je 
+x div 2 = 5 i 
+x mod 2 = 1 
+onda je ceo broj x = ___:
+11
+
+Q11: Difficulty: Medium
+Angular i React su najpoznatiji __________ frejmvorci.
+Javascript
+
+Q12: Difficulty: Medium
+Znak dodele vrednosti u programskom jeziku Pascal je?
+:=
+
+Q13: Difficulty: Medium
+HTML element za najveci naslov je: 
+a) <h6>
+
+b) <h1>
+
+c) <head>
+
+d) <heading>
+
+Q14: Difficulty: Medium
+Framework se u racunaru koristi za:
+a)Prenos podataka
+b)Zaštitu *
+c)Autentikaciju
+d)Dizanje sistema
+
+Q15: Difficulty: Medium
+Koji se od sledecih programskih jezika koristi za veštacku inteligenciju
+a) C
+b) Java
+c) J2EE
+d) Prolog *
+
+Q16: Difficulty: Medium
+Koji se protokol koristi za E-Mail?
+a)HTTP
+b)POP3
+c)SMTP *
+d)SSH
+
+Q17: Difficulty: Medium
+Koji kompjuterski program služi za prebacivanje asemblerskog jezika u mašinski jezik?
+a)Interpreter
+b)Kompajler
+c)Asembler
+d)Komparator
+
+Q18: Difficulty: Medium
+Šta je vece, heksadecimalno F, ili binarno 1000?
+F
+
+Q19: Difficulty: Medium
+Svaki racunar prikacen na internet ima jedinstvenu:
+a)Memorijsku adresu
+b)Internet adresu
+c)IP adresu *
+d)Virtualnu adresu
+
+Q20: Difficulty: Medium
+Koja Americka kompanija je poznatija pod nazivom Big Blue?
+a)Apple
+b)Microsoft
+c)Xerox
+d)IBM *
+
+Q21: Difficulty: Medium
+
+Q22: Difficulty: Medium
+
+Q23: Difficulty: Medium
+
+Q24: Difficulty: Medium
+
+Q25: Difficulty: Medium
+
+Q26: Difficulty: Medium
+
+Q27: Difficulty: Medium
+
+Q28: Difficulty: Medium
+
+Q29: Difficulty: Medium
+
+Q30: Difficulty: Medium
+
+Q31: Difficulty: Medium
+
+Q32: Difficulty: Medium
+
+Q33: Difficulty: Medium
+
+Q34: Difficulty: Medium
+
+Q35: Difficulty: Medium
+
+Q36: Difficulty: Medium
+
+Q37: Difficulty: Medium
+
+Q38: Difficulty: Medium
+
+Q39: Difficulty: Medium
+
+Q40: Difficulty: Medium
