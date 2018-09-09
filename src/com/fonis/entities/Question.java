@@ -130,7 +130,30 @@ public class Question {
         return -1;
     }
 
+    public void editQuestion(questionType newQuestionType, String newQuestionText, String newCorrectAnswer,
+                             LinkedList<String> newPossibleAnswers, questionDifficulty newQuestionDifficulty) {
 
+        if (!type.equals(newQuestionType))
+            setType(newQuestionType);
+
+        if (!questionText.equalsIgnoreCase(newQuestionText))
+            setQuestionText(newQuestionText);
+
+        if (!correctAnswer.equalsIgnoreCase(newCorrectAnswer))
+            setCorrectAnswer(newCorrectAnswer);
+
+        if (this.type.equals(questionType.Open) && newPossibleAnswers != null) {
+            newPossibleAnswers = null;
+        }
+        if (this.type.equals(questionType.Closed) && newPossibleAnswers == null){
+           newPossibleAnswers=new LinkedList<>();
+        }
+        this.setPossibleAnswers(newPossibleAnswers);
+
+
+        if (!difficulty.equals(newQuestionDifficulty))
+            setDifficulty(newQuestionDifficulty);
+    }
 
 
 }

@@ -1,16 +1,14 @@
 package com.fonis.services;
 
 import com.fonis.entities.Question;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ParsingService {
@@ -27,7 +25,7 @@ public class ParsingService {
         List<Question> listOfQuestions = null;
         try (FileReader reader = new FileReader("data/questions.json")) {
             JsonObject jsonFileContent = gson.fromJson(reader, JsonObject.class);
-            if (jsonFileContent != null && jsonFileContent.has("Questions")){
+            if (jsonFileContent != null && jsonFileContent.has("Questions")) {
                 JsonArray jsonArrayOfQuestions = jsonFileContent.getAsJsonArray("Questions");
                 String arrayOfQuestionsString = gson.toJson(jsonArrayOfQuestions);
                 listOfQuestions = gson.fromJson(arrayOfQuestionsString, collectionType);
@@ -42,7 +40,8 @@ public class ParsingService {
         }
         return listOfQuestions;
     }
-//    Loads questions from array which is value of a property named "Questions" into JsonArray and returns it.
+
+    //    Loads questions from array which is value of a property named "Questions" into JsonArray and returns it.
     private JsonArray loadQuestionsFromJsonFileToJsonArray() {
         JsonArray jsonArrayOfQuestions = null;
         try (FileReader reader = new FileReader("data/questions.json")) {
@@ -90,8 +89,7 @@ public class ParsingService {
     }
 
 
-
-    private void changeTheValueOfPropertyInJsonFile(String propertyName, JsonArray newPropertyValue) throws Exception {
+    private void changeTheValueOfPropertyInJsonFile(String propertyName, JsonElement newPropertyValue) throws Exception {
         FileReader reader = new FileReader("data/questions.json");
         JsonObject jsonFileContent = gson.fromJson(reader, JsonObject.class);
         reader.close();
@@ -112,4 +110,17 @@ public class ParsingService {
         writer.write(gson.toJson(jsonFileContent));
         writer.close();
     }
+
+    public void editExistingQuestion(Question questionForEditing,
+                                     Question.questionType newQuestionType, String newQuestionText, String newCorrectAnswer,
+                                     LinkedList<String> newPossibleAnswers, Question.questionDifficulty newQuestionDifficulty,
+                                     List<Question> questions) throws Exception {
+
+        questionForEditing.editQuestion(newQuestionType, newQuestionText, newCorrectAnswer, newPossibleAnswers, newQuestionDifficulty);
+
+        JsonElement questionsAsJsonElement = gson.toJsonTree(questions);
+        changeTheValueOfPropertyInJsonFile("Questions", questionsAsJsonElement);
+    }
+
+
 }
