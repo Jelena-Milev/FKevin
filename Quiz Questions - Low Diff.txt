@@ -160,10 +160,22 @@ d) Juliet
 
 
 Q31: Difficulty: Low
+Iz koje igrice su šifre HESOYAM i AEZAKMI?
+a) GTA: San Andreas *
+b) GTA: Vice City
+c) Call of Duty 2
+d) FIFA 10
 
 Q32: Difficulty: Low
+Šta je izašlo poslednje, iPhone, iPad, ili iPod?
+iPad
 
 Q33: Difficulty: Low
+Da bi proverili neki uslov, koristimo:
+a) if() *
+b) for()
+c) while()
+d) goto()
 
 Q34: Difficulty: Low
 
