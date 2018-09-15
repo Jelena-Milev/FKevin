@@ -146,13 +146,43 @@ Koja kompanija je kupila kompaniju Motorola?
 Lenovo
 
 Q25: Difficulty: High
+Svaka nit mora da implementira koju metodu?
+a) stop()
+b) wait() *
+c) pause()
+d) go()
 
 Q26: Difficulty: High
+U objektnom programiranju, statičkim metodama se pristupa preko?
+a) imena klase *
+b) objekta 
+c) objekta i imena klase
+d) nijedno od ponuđenog
 
 Q27: Difficulty: High
+Apstraktna metoda ima samo:
+a) tip metode
+b) potpis metode *
+c) ime metode
+d) parametre metode
 
 Q28: Difficulty: High
+Pri kreiranju instance objekta neke klase, poziva se:
+a) drugi objekat
+b) konstruktor
+c) klasa
+d) biblioteka kreiranja
 
 Q29: Difficulty: High
+Kako se dodaje ivica na tabeli putem CSS-a?
+a) border: 1px solid *
+b) table-border: 1px solid
+c) tborder: 1px solid
+d) table: 1px solid
 
 Q30: Difficulty: High
+Ko definise standarde na Webu?
+a) Google
+b) Microsoft
+c) W3C *
+d) IBM
