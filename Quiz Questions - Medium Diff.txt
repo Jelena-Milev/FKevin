@@ -155,20 +155,60 @@ c) Windows XP
 d) Windows Vista *
 
 Q25: Difficulty: Medium
+Skraćenica SQL znači:
+a) Strong Question Language
+b) Structured Question Language
+c) Structured Query Language *
+d) Strong Query Langugage
 
 Q26: Difficulty: Medium
+Kako pomoću SQL-a uzeti kolonu Ime iz tabele Osobe
+a) SELECT Ime FROM Osobe *
+b) SELECT Osobe.Ime
+c) EXTRACT Ime FROM Osobe
+d) EXTRACT FROM Osobe Ime
 
 Q27: Difficulty: Medium
+Kako pomoću SQL-a preuzeti sve kolone iz tabele Osobe
+a) SELECT all FROM Osobe
+b) SELECT FROM Osobe
+c) SELECT * FROM Osobe *
+d) SELECT *.Osobe
 
 Q28: Difficulty: Medium
+Kako pomoću SQL-a preuzeti sve podatke čije je Ime jednako Petar, u tabeli Osobe
+a) SELECT * FROM Osobe WHERE Ime<>'Petar'
+b) SELECT * FROM Osobe WHERE Ime='Petar' *
+c) SELECT [all] FROM Persons WHERE Ime='Petar'
+d) SELECT [all] FROM Persons WHERE Ime LIKE 'Petar'
 
 Q29: Difficulty: Medium
+Kako pomoću SQL-a preuzeti sve podatke čije je Ime počinje sa a, u tabeli Osobe
+a) SELECT * FROM Osobe WHERE Ime LIKE 'a%' *
+b) SELECT * FROM Osobe WHERE Ime='a'
+c) SELECT * FROM Osobe WHERE Ime='%a%'
+d) SELECT * FROM Osobe WHERE Ime LIKE '%a'
 
 Q30: Difficulty: Medium
+Koja SQL naredba uzima isključivo različite vrednosti?
+a) SELECT DIFFERENT
+b) SELECT DISTINCT *
+c) SELECT UNIQUE
+d) SELECT DIFF
 
 Q31: Difficulty: Medium
+Kako pomoću SQL-a ubaciti novi podatak u tabelu Osobe?
+a) INSERT ('Pera', 'Perić') INTO Osobe
+b) INSERT VALUES ('Pera', 'Perić') INTO Osobe
+c) INSERT INTO Osobe VALUES ('Pera', 'Perić') *
+d) INSERT Osobe INTO VALUES ('Pera', 'Perić')
 
 Q32: Difficulty: Medium
+Kako pomoću SQL-a obrisati podatke čije je Ime jednako Petar?
+a) DELETE FROM Osobe WHERE Ime = 'Petar' *
+b) DELETE Ime='Petar' FROM Osobe
+c) DELETE ROW Ime='Petar' FROM Osobe
+d) DELETE Ime=='Petar' FROM Osobe
 
 Q33: Difficulty: Medium
 
