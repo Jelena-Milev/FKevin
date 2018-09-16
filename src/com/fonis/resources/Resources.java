@@ -15,4 +15,21 @@ public class Resources {
     public enum EntityType{
         Question, Pariticipant
     }
+
+    public enum DifficultyPoints{
+        Low (1),
+        Medium (3),
+        High (5);
+
+        private int points;
+
+        DifficultyPoints(int value){
+            this.points = value;
+        }
+
+        public int getPoints(){
+            return this.points;
+        }
+
+    }
 }

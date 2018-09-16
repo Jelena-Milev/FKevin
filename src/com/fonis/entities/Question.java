@@ -5,6 +5,7 @@ import com.fonis.resources.Resources;
 import java.util.LinkedList;
 import java.util.Objects;
 
+@Deprecated
 public class Question {
 
     private Resources.QuestionType type;
