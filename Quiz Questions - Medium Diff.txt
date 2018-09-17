@@ -211,12 +211,29 @@ c) DELETE ROW Ime='Petar' FROM Osobe
 d) DELETE Ime=='Petar' FROM Osobe
 
 Q33: Difficulty: Medium
+Šta znači skraćenica CSS?
+a) Creative Style Sheets
+b) Colorful Style Sheets
+c) Computer Style Sheets
+d) Cascading Style Sheets *
 
 Q34: Difficulty: Medium
+Gde se u HTML dokumentu povezuje sa CSS-om?
+a) u <body> segmentu
+b) u <head> segmentu *
+c) u <title> segmentu
+d) u prvom redu
 
 Q35: Difficulty: Medium
+Kako uporediti dva stringa u programskom jeziku C?
+a) strcmp() *
+b) equals()
+c) string()
+d) compare()
 
 Q36: Difficulty: Medium
+Koja kompanija proizvodi Honor mobilne telefone?
+Huawei 
 
 Q37: Difficulty: Medium
 
