@@ -1,8 +1,10 @@
 package com.fonis.services;
 
+import com.fonis.entities.AbstractQuestion;
 import com.fonis.entities.Participant;
 import com.fonis.entities.Question;
 import com.fonis.resources.Resources;
+import com.fonis.resources.Resources.*;
 import com.fonis.resources.Resources.EntityType;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
@@ -23,19 +25,21 @@ public class ParsingService {
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
-    public List getEntitiesAsList(EntityType entityType, String fileName) {
-        Class type = entityType.equals(EntityType.Pariticipant) ? Participant.class : Question.class;
-        Type collectionType = TypeToken.getParameterized(List.class, type).getType();
-        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entityType, fileName);
+    public List getEntitiesAsList(Entities entity) {
+//    public List getEntitiesAsList(EntityType entityType, String fileName) {
+//        Class type = entityType.equals(EntityType.Pariticipant) ? Participant.class : Question.class;
+        Type collectionType = TypeToken.getParameterized(List.class, entity.getEntityClass()).getType();
+        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entity);
         List entitiesInList = gson.fromJson(entitiesInJsonArray, collectionType);
         return entitiesInList;
     }
 
 
-    public JsonArray getEntitiesAsJsonArray(EntityType entityType, String fileName) {
-        String propertyName = entityType.toString() + 's';
+    public JsonArray getEntitiesAsJsonArray(Resources.Entities entity) {
+        String propertyName = entity.getEntityName();
         JsonArray entitiesInJsonArray = null;
-        JsonObject jsonFileContent = getFileContentAsJsonObject(fileName);
+        String pathToJsonFile = Resources.DATA_LOCATION + entity.getEntityJsonFileName();
+        JsonObject jsonFileContent = getFileContentAsJsonObject(pathToJsonFile);
         if (jsonFileContent != null && jsonFileContent.has(propertyName)) {
             entitiesInJsonArray = jsonFileContent.getAsJsonArray(propertyName);
         }
@@ -55,18 +59,17 @@ public class ParsingService {
     }
 
 
-    /**
-     * This method sets new value for given property in given file.
-     * @param propertyName - Name of the property which value is changing
-     * @param newPropertyValue - New value for the given property
-     * @param fileName - File containing property which value is changing
-     */
-    private void changeValueOfPropertyInJsonFile(String propertyName, JsonElement newPropertyValue,
-                                                    String fileName, boolean backUpFile) {
-        if(backUpFile)
-        backupFile(fileName);
 
-        JsonObject jsonFileContent = getFileContentAsJsonObject(fileName);
+//    private void changeValueOfPropertyInJsonFile(String propertyName, JsonElement newPropertyValue,
+//                                                    String fileName, boolean backUpFile) {
+    private void changeValueOfPropertyInJsonFile(Entities entity, JsonElement newPropertyValue,
+                                                 boolean backUpFile) {
+
+        String pathToJsonFile = Resources.DATA_LOCATION + entity.getEntityJsonFileName();
+        if (backUpFile)
+            backupFile(pathToJsonFile);
+
+        JsonObject jsonFileContent = getFileContentAsJsonObject(pathToJsonFile);
 
 //      If the file is empty, we have to create an object which we are going to write into the file.
         if (jsonFileContent == null)
@@ -75,29 +78,29 @@ public class ParsingService {
 //      If an object from the file has a property named "Questions", we have to remove it in order to add it again
 //      with a changed value. If the object has not such a property, there is nothing to be removed, and we only have
 //      to add such a property.
-        if (jsonFileContent.has(propertyName))
-            jsonFileContent.remove(propertyName);
+        if (jsonFileContent.has(entity.getEntityName()))
+            jsonFileContent.remove(entity.getEntityName());
 
-        jsonFileContent.add(propertyName, newPropertyValue);
+        jsonFileContent.add(entity.getEntityName(), newPropertyValue);
 
-        try (FileWriter writer = new FileWriter(fileName)) {
+        try (FileWriter writer = new FileWriter(pathToJsonFile)) {
             writer.write(gson.toJson(jsonFileContent));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void backupFile(String fileName){
+    private void backupFile(String pathToOriginalFile) {
 
-        File fileForBackup = new File(fileName);
-        String[] fileNameParts=fileForBackup.getName().split("[.]");
+        File originalFile = new File(pathToOriginalFile);
+        String[] fileNameParts = originalFile.getName().split("[.]");
 
-        if(fileForBackup.exists()){
+        if (originalFile.exists()) {
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             String currentDateTime = dateTimeFormatter.format(LocalDateTime.now());
-            File backupFile = new File("backup/"+fileNameParts[0]+"-backup-" + currentDateTime + ".json");
+            File backupFile = new File(Resources.DATA_BACKUP_LOCATION + fileNameParts[0] + "-backup-" + currentDateTime + ".json");
             try {
-                Files.copy(fileForBackup.toPath(), backupFile.toPath());
+                Files.copy(originalFile.toPath(), backupFile.toPath());
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -105,72 +108,62 @@ public class ParsingService {
         }
     }
 
-    /**
-     * Adds object given to the .json file given
-     * @param newEntity - object to be added to .json file
-     * @param entityType - type of the object (Question or Participant)
-     * @param fileName - name of the .json file in which object will be added
-     * @throws Exception - if the given object already exists in the .json file
-     */
-    public void addEntityToJsonFile(Object newEntity, EntityType entityType,
-                                    String fileName, boolean backUpFile) throws Exception {
-        JsonObject newEntityAsJsonObject=gson.toJsonTree(newEntity).getAsJsonObject();
-        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entityType, fileName);
+
+    public void addEntityToJsonFile(Object newEntity, Entities entity, boolean backUp)throws Exception {
+
+        JsonObject newEntityAsJsonObject = gson.toJsonTree(newEntity).getAsJsonObject();
+        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entity);
 
         if (entitiesInJsonArray == null)
             entitiesInJsonArray = new JsonArray();
 
         if (entitiesInJsonArray.contains(newEntityAsJsonObject))
-            throw new Exception("This entity already exist in the file!");
+            throw new IllegalArgumentException("This entity already exist in the file!");
 
         entitiesInJsonArray.add(newEntityAsJsonObject);
 
-        String propertyName = entityType.toString() + 's';
-
-        changeValueOfPropertyInJsonFile(propertyName, entitiesInJsonArray, fileName, backUpFile);
+        changeValueOfPropertyInJsonFile(entity, entitiesInJsonArray, backUp);
     }
 
 
-    public void removeEntityFromJsonFile(Object entityForRemoving, Resources.EntityType entityType,
-                                         String fileName, boolean backUpFile) throws Exception {
-       JsonObject entityForRemovingAsJsonObject=gson.toJsonTree(entityForRemoving).getAsJsonObject();
+    public void removeEntityFromJsonFile(Object entityForRemoving, Entities entity,
+                                            boolean backUpFile) throws Exception {
+        JsonObject entityForRemovingAsJsonObject = gson.toJsonTree(entityForRemoving).getAsJsonObject();
 
-        JsonArray jsonArrayOfEntities = getEntitiesAsJsonArray(entityType, fileName);
+        JsonArray jsonArrayOfEntities = getEntitiesAsJsonArray(entity);
 
         if (jsonArrayOfEntities == null || jsonArrayOfEntities.size() == 0)
-            throw new Exception("File is empty! There is no entities to be removed!");
+            throw new IllegalStateException("File is empty! There is no entities to be removed!");
 
         if (!jsonArrayOfEntities.contains(entityForRemovingAsJsonObject))
-            throw new Exception("The entity does not exist in the file!");
+            throw new IllegalArgumentException("The entity does not exist in the file!");
 
         jsonArrayOfEntities.remove(entityForRemovingAsJsonObject);
 
-        String propertyName=entityType.toString()+'s';
-        changeValueOfPropertyInJsonFile(propertyName, jsonArrayOfEntities, fileName, backUpFile);
+        changeValueOfPropertyInJsonFile(entity, jsonArrayOfEntities, backUpFile);
     }
 
-    public void editExistingQuestion(Question questionForEditing,
-                                     Question newQuestion, List<Question> questions) {
+    public void editExistingQuestion(AbstractQuestion questionForEditing,
+                                                AbstractQuestion newQuestion, List<AbstractQuestion> questions, Entities entity) {
 
-        if(checkForDuplicates(questionForEditing, newQuestion, questions)!=null)
-            throw new RuntimeException("This question already exists!");
+        if (checkForDuplicates(questionForEditing, newQuestion, questions) != null)
+            throw new IllegalArgumentException("This question already exists!");
 
-        questionForEditing.editQuestion(newQuestion);
+        questionForEditing=newQuestion;
 
         JsonElement questionsAsJsonElement = gson.toJsonTree(questions);
-        changeValueOfPropertyInJsonFile("Questions", questionsAsJsonElement, "data/questions.json", true);
+        changeValueOfPropertyInJsonFile(entity, questionsAsJsonElement, true);
     }
 
-    private Question checkForDuplicates(Question questionForEditing,
-                                       Question newQuestion, List<Question> questions){
-        for (Question question :
+    public AbstractQuestion checkForDuplicates(AbstractQuestion questionForEditing,
+                                                AbstractQuestion newQuestion, List<AbstractQuestion> questions) {
+        for (AbstractQuestion question :
                 questions) {
-            if(question!=questionForEditing && question.equals(newQuestion))
+            if (question != questionForEditing && question.equals(newQuestion))
                 return question;
         }
         return null;
     }
-
 
 
 }
