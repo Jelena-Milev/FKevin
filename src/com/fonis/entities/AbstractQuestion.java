@@ -3,11 +3,25 @@ package com.fonis.entities;
 import com.fonis.resources.Resources;
 
 public abstract class AbstractQuestion{
-    private String questionText;
-    private String correctAnswer;
-    private Resources.QuestionDifficulty difficulty;
+    protected String questionText;
+    protected String correctAnswer;
+    protected String guessedAnswer;
+    protected Resources.QuestionDifficulty difficulty;
 
-    public abstract boolean isAnswerCorrect();
+    protected abstract boolean isAnswerCorrect();
+
+
+    public String getQuestionText(){
+        return this.questionText;
+    }
+
+    public String getCorrectAnswer() { return this.correctAnswer; }
+
+    public String getGuessedAnswer() { return this.guessedAnswer; }
+
+    public Resources.QuestionDifficulty getDifficulty(){
+        return this.difficulty;
+    }
 
     public int getQuestionPoints(){
         if(this.isAnswerCorrect()){
@@ -21,13 +35,5 @@ public abstract class AbstractQuestion{
         }else{
             return 0;
         }
-    }
-
-    public Resources.QuestionDifficulty getDifficulty(){
-        return this.difficulty;
-    }
-
-    public String getQuestionText(){
-        return this.questionText;
     }
 }
