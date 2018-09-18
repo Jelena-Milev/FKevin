@@ -2,6 +2,7 @@ package com.fonis.services;
 
 import com.fonis.entities.Participant;
 import com.fonis.entities.Question;
+import com.fonis.resources.Resources;
 import com.fonis.resources.Resources.EntityType;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
@@ -54,8 +55,15 @@ public class ParsingService {
     }
 
 
+    /**
+     * This method sets new value for given property in given file.
+     * @param propertyName - Name of the property which value is changing
+     * @param newPropertyValue - New value for the given property
+     * @param fileName - File containing property which value is changing
+     */
     private void changeValueOfPropertyInJsonFile(String propertyName, JsonElement newPropertyValue,
-                                                    String fileName) {
+                                                    String fileName, boolean backUpFile) {
+        if(backUpFile)
         backupFile(fileName);
 
         JsonObject jsonFileContent = getFileContentAsJsonObject(fileName);
@@ -96,6 +104,73 @@ public class ParsingService {
             }
         }
     }
+
+    /**
+     * Adds object given to the .json file given
+     * @param newEntity - object to be added to .json file
+     * @param entityType - type of the object (Question or Participant)
+     * @param fileName - name of the .json file in which object will be added
+     * @throws Exception - if the given object already exists in the .json file
+     */
+    public void addEntityToJsonFile(Object newEntity, EntityType entityType,
+                                    String fileName, boolean backUpFile) throws Exception {
+        JsonObject newEntityAsJsonObject=gson.toJsonTree(newEntity).getAsJsonObject();
+        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entityType, fileName);
+
+        if (entitiesInJsonArray == null)
+            entitiesInJsonArray = new JsonArray();
+
+        if (entitiesInJsonArray.contains(newEntityAsJsonObject))
+            throw new Exception("This entity already exist in the file!");
+
+        entitiesInJsonArray.add(newEntityAsJsonObject);
+
+        String propertyName = entityType.toString() + 's';
+
+        changeValueOfPropertyInJsonFile(propertyName, entitiesInJsonArray, fileName, backUpFile);
+    }
+
+
+    public void removeEntityFromJsonFile(Object entityForRemoving, Resources.EntityType entityType,
+                                         String fileName, boolean backUpFile) throws Exception {
+       JsonObject entityForRemovingAsJsonObject=gson.toJsonTree(entityForRemoving).getAsJsonObject();
+
+        JsonArray jsonArrayOfEntities = getEntitiesAsJsonArray(entityType, fileName);
+
+        if (jsonArrayOfEntities == null || jsonArrayOfEntities.size() == 0)
+            throw new Exception("File is empty! There is no entities to be removed!");
+
+        if (!jsonArrayOfEntities.contains(entityForRemovingAsJsonObject))
+            throw new Exception("The entity does not exist in the file!");
+
+        jsonArrayOfEntities.remove(entityForRemovingAsJsonObject);
+
+        String propertyName=entityType.toString()+'s';
+        changeValueOfPropertyInJsonFile(propertyName, jsonArrayOfEntities, fileName, backUpFile);
+    }
+
+    public void editExistingQuestion(Question questionForEditing,
+                                     Question newQuestion, List<Question> questions) {
+
+        if(checkForDuplicates(questionForEditing, newQuestion, questions)!=null)
+            throw new RuntimeException("This question already exists!");
+
+        questionForEditing.editQuestion(newQuestion);
+
+        JsonElement questionsAsJsonElement = gson.toJsonTree(questions);
+        changeValueOfPropertyInJsonFile("Questions", questionsAsJsonElement, "data/questions.json", true);
+    }
+
+    private Question checkForDuplicates(Question questionForEditing,
+                                       Question newQuestion, List<Question> questions){
+        for (Question question :
+                questions) {
+            if(question!=questionForEditing && question.equals(newQuestion))
+                return question;
+        }
+        return null;
+    }
+
 
 
 }
