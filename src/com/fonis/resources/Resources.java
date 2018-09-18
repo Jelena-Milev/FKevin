@@ -1,22 +1,31 @@
 package com.fonis.resources;
 
+import com.fonis.entities.ClosedQuestion;
+import com.fonis.entities.OpenQuestion;
+import com.fonis.entities.Participant;
+
 public class Resources {
 
-    // #TODO set this to the location the applicaiton is running from, dynamically
+    // #TODO set this to the location the application is running from, dynamically
     public static String APP_LOCATION = "";
+
+    public static final String DATA_LOCATION = APP_LOCATION + "data/";
+    public static final String DATA_BACKUP_LOCATION = DATA_LOCATION + "backup/";
 
     // Entity names
     public enum Entities{
-        PARTICIPANT("Participants", "Participants"),
-        OPEN_QUESTION("OpenQuestions", "Questions"),
-        CLOSED_QUESTION("ClosedQuestions", "Questions");
+        PARTICIPANT("Participants", "Participants.json", Participant.class),
+        OPEN_QUESTION("OpenQuestions", "Questions.json", OpenQuestion.class),
+        CLOSED_QUESTION("ClosedQuestions", "Questions.json", ClosedQuestion.class);
 
         private final String entityName;
         private final String jsonFileName;
+        private final Class entityClass;
 
-        Entities(String entityName, String jsonFieName){
+        Entities(String entityName, String jsonFieName, Class entityClass){
             this.entityName = entityName;
             this.jsonFileName = jsonFieName;
+            this.entityClass = entityClass;
         }
 
         public String getEntityName(){
@@ -26,6 +35,10 @@ public class Resources {
         public String getEntityJsonFileName(){
             return this.jsonFileName;
         }
+
+        public Class getEntityClass(){
+            return this.entityClass;
+        }
     }
 
     public enum QuestionDifficulty {
@@ -33,10 +46,10 @@ public class Resources {
         MEDIUM (3),
         HIGH (5);
 
-        private int points;
+        private final int points;
 
-        QuestionDifficulty(int value){
-            this.points = value;
+        QuestionDifficulty(int points){
+            this.points = points;
         }
 
         public int getPoints(){
@@ -44,6 +57,8 @@ public class Resources {
         }
     }
 
+    // #TODO to be removed together with Question class
+    @Deprecated
     public enum EntityType{
         Question, Pariticipant
     }

@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b91121bd-dce2-47cd-b067-4680fdb66194" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fonis/entities/OpenQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/entities/OpenQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/fonis/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/entities/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fonis/resources/Resources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/resources/Resources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/fonis/services/ParsingServiceNeca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/fonis/services/ParsingServiceNeca.java" afterDir="false" />
     </list>
@@ -20,11 +16,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ClosedQuestion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding>
+                <element signature="e#189#190#0" expanded="true" />
+                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ParsingServiceNeca.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingServiceNeca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="13" column="131" selection-start-line="13" selection-start-column="131" selection-end-line="13" selection-end-column="131" />
+            <state relative-caret-position="273">
+              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,11 +47,10 @@
       <file leaf-file-name="MainTestNeca.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/MainTestNeca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="231">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,7 +59,7 @@
       <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Question.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="1491">
               <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
             </state>
           </provider>
@@ -54,13 +68,16 @@
       <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/resources/Resources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="441">
+              <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#529#530#0" expanded="true" />
                 <element signature="e#564#565#0" expanded="true" />
                 <element signature="e#773#774#0" expanded="true" />
                 <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1195#1196#0" expanded="true" />
                 <element signature="e#436#437#0" expanded="true" />
                 <element signature="e#479#480#0" expanded="true" />
                 <element signature="e#520#521#0" expanded="true" />
@@ -73,8 +90,8 @@
       <file leaf-file-name="AbstractQuestion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+            <state relative-caret-position="198">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding>
                 <element signature="method#validateDifficulty#0;class#AbstractQuestion#0" />
               </folding>
@@ -82,11 +99,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ParsingServiceJeca.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingServiceJeca.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2121">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ParsingService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="89" column="103" selection-start-line="89" selection-start-column="98" selection-end-line="89" selection-end-column="103" />
             </state>
           </provider>
         </entry>
@@ -117,6 +143,16 @@
       <find>$</find>
       <find>participant</find>
       <find>entityType</find>
+      <find>Class</find>
+      <find>backupEntit</find>
+      <find>File(</find>
+      <find>FileWrit</find>
+      <find>FileWri</find>
+      <find>Writer</find>
+      <find>&quot;resources</find>
+      <find>.json</find>
+      <find>json</find>
+      <find>PARTICIPANT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,8 +166,8 @@
         <option value="$PROJECT_DIR$/src/com/fonis/entities/Question.java" />
         <option value="$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java" />
         <option value="$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java" />
-        <option value="$PROJECT_DIR$/src/com/fonis/resources/Resources.java" />
         <option value="$PROJECT_DIR$/src/com/fonis/MainTestNeca.java" />
+        <option value="$PROJECT_DIR$/src/com/fonis/resources/Resources.java" />
         <option value="$PROJECT_DIR$/src/com/fonis/services/ParsingServiceNeca.java" />
       </list>
     </option>
@@ -300,12 +336,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32985386" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32985386" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32985386" />
       <window_info anchor="bottom" id="Dependency Viewer" weight="0.32985386" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26074973" />
-      <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32985386" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="7" visible="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -373,8 +409,8 @@
           <folding>
             <element signature="e#189#190#0" expanded="true" />
             <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,6 +452,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
           <caret line="106" column="76" selection-start-line="106" selection-start-column="76" selection-end-line="106" selection-end-column="76" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -450,8 +490,8 @@
           <folding>
             <element signature="e#189#190#0" expanded="true" />
             <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -524,8 +564,8 @@
           <folding>
             <element signature="e#189#190#0" expanded="true" />
             <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -601,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingServiceJeca.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/OpenQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -621,19 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Participant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-149">
@@ -641,33 +661,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Question.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/MainTestNeca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
+        <state relative-caret-position="231">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/MainTestNeca.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        <state relative-caret-position="189">
+          <caret line="89" column="103" selection-start-line="89" selection-start-column="98" selection-end-line="89" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingServiceJeca.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2121">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
+            <element signature="method#validateDifficulty#0;class#AbstractQuestion#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/ClosedQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/resources/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="441">
+          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#529#530#0" expanded="true" />
             <element signature="e#564#565#0" expanded="true" />
             <element signature="e#773#774#0" expanded="true" />
             <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
             <element signature="e#436#437#0" expanded="true" />
             <element signature="e#479#480#0" expanded="true" />
             <element signature="e#520#521#0" expanded="true" />
@@ -676,27 +728,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fonis/entities/AbstractQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
-          <folding>
-            <element signature="method#validateDifficulty#0;class#AbstractQuestion#0" />
-          </folding>
+        <state relative-caret-position="1491">
+          <caret line="176" column="50" selection-start-line="176" selection-start-column="50" selection-end-line="176" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fonis/services/ParsingServiceNeca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="13" column="131" selection-start-line="13" selection-start-column="131" selection-end-line="13" selection-end-column="131" />
+        <state relative-caret-position="273">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
