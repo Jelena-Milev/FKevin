@@ -5,9 +5,16 @@ import com.fonis.resources.Resources;
 import java.util.LinkedList;
 import java.util.Objects;
 
+@Deprecated
 public class Question {
 
-    private Resources.QuestionType type;
+    // Moved here to prevent compilation errors until the question is removed
+    // closed questions are pick an answers questions and open questions are fill in questions
+    public enum QuestionType {
+        Open, Closed
+    }
+
+    private QuestionType type;
     private String questionText;
     private String correctAnswer;
     private LinkedList<String> possibleAnswers;
@@ -49,7 +56,7 @@ public class Question {
     }
 
     public void setPossibleAnswers(LinkedList<String> possibleAnswers) {
-        if (type == Resources.QuestionType.Open) {
+        if (type == QuestionType.Open) {
             if (possibleAnswers != null && possibleAnswers.size() > 0)
                 throw new RuntimeException("Check again, open questions cannot have offered answers to choose one of them!");
         } else {
@@ -77,17 +84,17 @@ public class Question {
         this.difficulty = difficulty;
     }
 
-    public Resources.QuestionType getType() {
+    public QuestionType getType() {
         return type;
     }
 
-    public void setType(Resources.QuestionType type) {
+    public void setType(QuestionType type) {
         if (type == null)
             throw new RuntimeException("Type of the question have to be entered!");
         this.type = type;
     }
 
-    private void setTypeNoValidation(Resources.QuestionType type) {
+    private void setTypeNoValidation(QuestionType type) {
         this.type = type;
     }
 
@@ -150,7 +157,7 @@ public class Question {
      * @param newQuestion - question which attributes are new values of this object's attributes
      */
     public void editQuestion(Question newQuestion) {
-        Resources.QuestionType newType=newQuestion.getType();
+        QuestionType newType=newQuestion.getType();
         if(!this.type.equals(newType))
             this.setTypeNoValidation(newType);
 
