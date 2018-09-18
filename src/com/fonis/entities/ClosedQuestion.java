@@ -10,13 +10,6 @@ public class ClosedQuestion extends AbstractQuestion{
         this.possibleAnswers = new String[3];
     }
 
-    public void setQuestionText(String questionText){
-        if(!this.validateTextAttribute(questionText)){
-            throw new IllegalArgumentException("Question text is either null or empty.");
-        }
-        this.questionText = questionText;
-    }
-
     public String[] getPossibleAnswers(){
         return possibleAnswers;
     }
@@ -28,28 +21,7 @@ public class ClosedQuestion extends AbstractQuestion{
         this.possibleAnswers = possibleAnswers;
     }
 
-    public void setCorrectAnswer(String correctAnswer){
-        if(!this.validateTextAttribute(correctAnswer)){
-            throw new IllegalArgumentException("Correct answer is either null or empty.");
-        }
-        this.correctAnswer = correctAnswer;
-    }
-
-    public void setGuessedAnswer(String guessedAnswer){
-        if(!this.validateTextAttribute(guessedAnswer)){
-            throw new IllegalArgumentException("Guessed answer is either null or empty.");
-        }
-        this.guessedAnswer = guessedAnswer;
-    }
-
-    public void setDifficulty(Resources.QuestionDifficulty questionDifficulty){
-        if(!this.validateDifficulty(questionDifficulty)){
-            throw new IllegalArgumentException("Question difficulty cannot be null");
-        }
-        this.difficulty = questionDifficulty;
-    }
-
-
+    // #TODO check for duplicate answers
     public boolean validatePossibleAnswers(String[] possibleAnswers){
         if(possibleAnswers == null || possibleAnswers.length != 3){
             return false;
@@ -79,7 +51,6 @@ public class ClosedQuestion extends AbstractQuestion{
         if(!this.validateDifficulty(this.difficulty)){
             return false;
         }
-
         return true;
     }
 
@@ -94,14 +65,6 @@ public class ClosedQuestion extends AbstractQuestion{
             throw new IllegalStateException("Question does not have all attributes set.");
         }
         return this.getQuestionPoints();
-    }
-
-    @Override
-    public boolean equals(Object o){
-        if(this == o) return true;
-        if(!(o instanceof ClosedQuestion)) return false;
-        ClosedQuestion that = (ClosedQuestion) o;
-        return this.questionText.toLowerCase().equals(that.questionText.toLowerCase());
     }
 
     @Override

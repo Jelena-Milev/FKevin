@@ -27,7 +27,37 @@ public abstract class AbstractQuestion {
         return this.difficulty;
     }
 
+    public void setQuestionText(String questionText){
+        if(!this.validateTextAttribute(questionText)){
+            throw new IllegalArgumentException("Question text is either null or empty.");
+        }
+        this.questionText = questionText;
+    }
+
+    public void setCorrectAnswer(String correctAnswer){
+        if(!this.validateTextAttribute(correctAnswer)){
+            throw new IllegalArgumentException("Correct answer is either null or empty.");
+        }
+        this.correctAnswer = correctAnswer;
+    }
+
+    public void setGuessedAnswer(String guessedAnswer){
+        if(!this.validateTextAttribute(guessedAnswer)){
+            throw new IllegalArgumentException("Guessed answer is either null or empty.");
+        }
+        this.guessedAnswer = guessedAnswer;
+    }
+
+    public void setDifficulty(Resources.QuestionDifficulty questionDifficulty){
+        if(!this.validateDifficulty(questionDifficulty)){
+            throw new IllegalArgumentException("Question difficulty cannot be null");
+        }
+        this.difficulty = questionDifficulty;
+    }
+
     public abstract int getPointsAfterValidation();
+
+    public abstract boolean validateQuestion();
 
     protected int getQuestionPoints() {
         if (this.isAnswerCorrect()) {
@@ -51,5 +81,11 @@ public abstract class AbstractQuestion {
         return questionDifficulty != null;
     }
 
-    public abstract boolean validateQuestion();
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(!(o instanceof AbstractQuestion)) return false;
+        AbstractQuestion that = (AbstractQuestion) o;
+        return this.questionText.toLowerCase().equals(that.questionText.toLowerCase());
+    }
 }

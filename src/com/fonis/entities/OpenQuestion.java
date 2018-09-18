@@ -1,35 +1,6 @@
 package com.fonis.entities;
 
-import com.fonis.resources.Resources;
-
 public class OpenQuestion extends AbstractQuestion {
-
-
-    public void setQuestionText(String questionText) {
-        if(!validateTextAttribute(questionText))
-            throw new IllegalArgumentException("Question text is either null or empty.");
-        this.questionText=questionText;
-    }
-
-
-    public void setCorrectAnswer(String correctAnswer) {
-        if(!validateTextAttribute(correctAnswer))
-            throw new IllegalArgumentException("Correct answer is either null or empty.");
-        this.correctAnswer=correctAnswer;
-    }
-
-
-    public void setGuessedAnswer(String guessedAnswer) {
-        if(!validateTextAttribute(guessedAnswer))
-            throw new IllegalArgumentException("Guessed answer is either null or empty.");
-        this.guessedAnswer=guessedAnswer;
-    }
-
-    public void setDifficulty(Resources.QuestionDifficulty difficulty) {
-        if(!validateDifficulty(difficulty))
-            throw new IllegalArgumentException("Question difficulty cannot be null");
-        this.difficulty=difficulty;
-    }
 
     @Override
     public boolean isAnswerCorrect() {

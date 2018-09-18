@@ -1,11 +1,8 @@
 package com.fonis.services;
 
 import com.fonis.entities.AbstractQuestion;
-import com.fonis.entities.Participant;
-import com.fonis.entities.Question;
 import com.fonis.resources.Resources;
-import com.fonis.resources.Resources.*;
-import com.fonis.resources.Resources.EntityType;
+import com.fonis.resources.Resources.Entities;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -26,8 +23,6 @@ public class ParsingService {
     }
 
     public List getEntitiesAsList(Entities entity) {
-//    public List getEntitiesAsList(EntityType entityType, String fileName) {
-//        Class type = entityType.equals(EntityType.Pariticipant) ? Participant.class : Question.class;
         Type collectionType = TypeToken.getParameterized(List.class, entity.getEntityClass()).getType();
         JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entity);
         List entitiesInList = gson.fromJson(entitiesInJsonArray, collectionType);
@@ -143,6 +138,7 @@ public class ParsingService {
         changeValueOfPropertyInJsonFile(entity, jsonArrayOfEntities, backUpFile);
     }
 
+    // #TODO move logic to question
     public void editExistingQuestion(AbstractQuestion questionForEditing,
                                                 AbstractQuestion newQuestion, List<AbstractQuestion> questions, Entities entity) {
 
@@ -155,6 +151,7 @@ public class ParsingService {
         changeValueOfPropertyInJsonFile(entity, questionsAsJsonElement, true);
     }
 
+    // #TODO move logic to question
     public AbstractQuestion checkForDuplicates(AbstractQuestion questionForEditing,
                                                 AbstractQuestion newQuestion, List<AbstractQuestion> questions) {
         for (AbstractQuestion question :
