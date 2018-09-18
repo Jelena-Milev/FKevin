@@ -11,7 +11,7 @@ public class ClosedQuestion extends AbstractQuestion{
     }
 
     public void setQuestionText(String questionText){
-        if(!this.validateText(questionText)){
+        if(!this.validateTextAttribute(questionText)){
             throw new IllegalArgumentException("Question text is either null or empty.");
         }
         this.questionText = questionText;
@@ -29,14 +29,14 @@ public class ClosedQuestion extends AbstractQuestion{
     }
 
     public void setCorrectAnswer(String correctAnswer){
-        if(!this.validateText(correctAnswer)){
+        if(!this.validateTextAttribute(correctAnswer)){
             throw new IllegalArgumentException("Correct answer is either null or empty.");
         }
         this.correctAnswer = correctAnswer;
     }
 
     public void setGuessedAnswer(String guessedAnswer){
-        if(!this.validateText(guessedAnswer)){
+        if(!this.validateTextAttribute(guessedAnswer)){
             throw new IllegalArgumentException("Guessed answer is either null or empty.");
         }
         this.guessedAnswer = guessedAnswer;
@@ -49,29 +49,51 @@ public class ClosedQuestion extends AbstractQuestion{
         this.difficulty = questionDifficulty;
     }
 
-    public boolean validateText(String text){
-        return text != null && !text.isEmpty();
-    }
 
     public boolean validatePossibleAnswers(String[] possibleAnswers){
         if(possibleAnswers == null || possibleAnswers.length != 3){
             return false;
         }
-        for(int i = 0; i < possibleAnswers.length; ++i){
-            if(!this.validateText(possibleAnswers[i])){
+        for(String possibleAnswer: possibleAnswers){
+            if(!this.validateTextAttribute(possibleAnswer)){
                 return false;
             }
         }
         return true;
     }
 
-    public boolean validateDifficulty(Resources.QuestionDifficulty questionDifficulty){
-        return questionDifficulty != null;
+    @Override
+    public boolean validateQuestion(){
+        if(!this.validateTextAttribute(this.questionText)){
+            return false;
+        }
+        if(!this.validateTextAttribute(this.correctAnswer)){
+            return false;
+        }
+        if(!this.validateTextAttribute(this.guessedAnswer)){
+            return false;
+        }
+        if(!this.validatePossibleAnswers(this.possibleAnswers)){
+            return false;
+        }
+        if(!this.validateDifficulty(this.difficulty)){
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public boolean isAnswerCorrect(){
         return this.guessedAnswer.toLowerCase().equals(this.correctAnswer.toLowerCase());
+    }
+
+    @Override
+    public int getPointsAfterValidation(){
+        if(!this.validateQuestion()){
+            throw new IllegalStateException("Question does not have all attributes set.");
+        }
+        return this.getQuestionPoints();
     }
 
     @Override

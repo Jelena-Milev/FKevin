@@ -1,6 +1,6 @@
 package com.fonis.services;
 
-import com.fonis.entities.Participant;
+import com.fonis.resources.Resources;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-// #TODO  -convert most of the functions to be usable for any type, set dynamic paths not just participant and merge this with the other ParsingService
+// #TODO  Fix saving to JSON files with multiple json objects in them, merge with other parsing services for unique parsing service
 public class ParsingServiceNeca{
     private Gson gson;
 
@@ -20,92 +20,96 @@ public class ParsingServiceNeca{
     }
 
     /**
-     * Converts a list of participants into a JSON file.
-     * @param participants List of participants to be saved to the participants.json file
-     * @param backupOldFile If set to true, the participants.json file will be backed up
-     *                      to the backup folder. If set to false, the participants.json file will
+     * Converts a list of entities into a JSON file.
+     * @param entities List of entities to be saved to the $entityName.json file
+     * @param entityType Name of the entity
+     * @param backupOldFile If set to true, the $entityName.json file will be backed up
+     *                      to the backup folder. If set to false, the entities.json file will
      *                      be overwritten with the new one.
      */
-    public void parseParticipantsToJson(List<Participant> participants, boolean backupOldFile){
+    public void parseEntitiesToJson(List<?> entities, Resources.Entities entityType, boolean backupOldFile){
         // Convert list to JSON String
-        String participantsString = this.gson.toJson(participants);
+        String entitiesString = this.gson.toJson(entities);
 
         JsonParser jsonParser = new JsonParser();
-        JsonElement participantsElement = jsonParser.parse(participantsString);
+        JsonElement entitiesElement = jsonParser.parse(entitiesString);
 
-        this.writeElementToParticipantsJsonFile(participantsElement, backupOldFile);
+        this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupOldFile);
     }
 
     /**
      * @param type Class which will be used as the list type.
+     * @param entityName Name of the entity from which the list will be generated
      * @return List of objects, of entered type, generated from the JSON file.
      */
-    public <T> List<T> getParticipantsJsonAsList(Class<T> type){
-        JsonElement participantsElement = this.getParticipantsJsonAsElement();
+    public <T> List<T> getEntitiesJsonAsList(Class<T> type, Resources.Entities entityName){
+        JsonElement entitiesElement = this.getEntitiesJsonAsElement(entityName);
 
         // Convert JSON element to list
         Type listType = TypeToken.getParameterized(List.class, type).getType();
-        return this.gson.fromJson(participantsElement, listType);
+        return this.gson.fromJson(entitiesElement, listType);
     }
 
     /**
-     * Adds the participant to the currently active participants.json file.
-     * @param participant Participant to be added.
-     * @param backupOldFile If set to true, a backup of the current participants.json file will be created.
+     * Adds the entity to the currently active $entityName.json file.
+     * @param entity Entity to be added.
+     * @param entityType Name of the entity to be added
+     * @param backupOldFile If set to true, a backup of the current $entityName.json file will be created.
      */
-    public void addParticipantToJsonFile(Participant participant, boolean backupOldFile){
-        JsonElement participantsElement = this.getParticipantsJsonAsElement();
+    public void addEntityToJsonFile(Object entity, Resources.Entities entityType, boolean backupOldFile){
+        JsonElement entitiesElement = this.getEntitiesJsonAsElement(entityType);
 
-        // Add new participant
-        JsonElement newParticipant = this.gson.toJsonTree(participant);
-        participantsElement.getAsJsonArray().add(newParticipant);
+        // Add new entity
+        JsonElement newEntity = this.gson.toJsonTree(entity);
+        entitiesElement.getAsJsonArray().add(newEntity);
 
-        this.writeElementToParticipantsJsonFile(participantsElement, backupOldFile);
+        this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupOldFile);
     }
 
     /**
-     * @return The participants.json file converted into a JsonElement.
+     * @param entityType Name of the entity
+     * @return The $entityName.json file converted into a JsonElement.
      */
-    private JsonElement getParticipantsJsonAsElement(){
-        JsonElement participantsElement = null;
+    private JsonElement getEntitiesJsonAsElement(Resources.Entities entityType){
+        JsonElement entitiesElement = null;
 
-        try(JsonReader jsonReader = new JsonReader(new FileReader("resources/participants.json"))){
-            JsonObject participantsObject = this.gson.fromJson(jsonReader, JsonObject.class);
-            participantsElement = participantsObject.get("Participants");
+        try(JsonReader jsonReader = new JsonReader(new FileReader("resources/" + entityType.getEntityJsonFileName() + ".json"))){
+            JsonObject entitiesObject = this.gson.fromJson(jsonReader, JsonObject.class);
+            entitiesElement = entitiesObject.get(entityType.getEntityName());
         }catch(FileNotFoundException e){
-            System.out.println("No participants json file available");
+            System.out.println("No " + entityType.getEntityJsonFileName() + " json file available.");
         }catch(IOException e){
             e.printStackTrace();
         }
-        return participantsElement;
+        return entitiesElement;
     }
 
-    // #TODO rewrite to be reusable for other types
-    private void writeElementToParticipantsJsonFile(JsonElement participants, boolean backupOldFile){
+    private void writeElementToEntitiesJsonFile(JsonElement entities, Resources.Entities entityType, boolean backupOldFile){
         // Backup old file, save to new file
         if(backupOldFile){
-            this.backupParticipantsJsonFile();
+            this.backupEntitiesJsonFile(entityType.getEntityJsonFileName());
         }
-        try(Writer writer = new FileWriter("resources/participants.json")){
-            JsonObject participantsObject = new JsonObject();
-            participantsObject.add("Participants", participants);
-            this.gson.toJson(participantsObject, writer);
+        try(Writer writer = new FileWriter("resources/" + entityType.getEntityJsonFileName() + ".json")){
+            JsonObject entitiesObject = new JsonObject();
+            entitiesObject.add(entityType.getEntityName(), entities);
+            this.gson.toJson(entitiesObject, writer);
         }catch(IOException e){
             e.printStackTrace();
         }
     }
 
     /**
-     * Creates the backup of the currently active participants.json file. The backup word is added to the file name
+     * Creates the backup of the currently active $entityName.json file. The backup word is added to the file name
      * as well as the current date time in the dd-MM-yyyy HH-mm-ss format, and the file is placed in the backup folder
+     * @param entityName Name of the entity whose file should be backed up
      */
-    private void backupParticipantsJsonFile(){
-        File participants = new File("resources/participants.json");
-        if(participants.exists()){
+    private void backupEntitiesJsonFile(String entityName){
+        File entities = new File("resources/" + entityName + ".json");
+        if(entities.exists()){
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss");
             String currentDateTime = dateTimeFormatter.format(LocalDateTime.now());
-            File backupFile = new File("resources/backup/participants-backup-" + currentDateTime + ".json");
-            participants.renameTo(backupFile);
+            File backupFile = new File("resources/backup/"+ entityName + "-backup-" + currentDateTime + ".json");
+            entities.renameTo(backupFile);
         }
     }
 }

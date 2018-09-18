@@ -23,17 +23,29 @@ public abstract class AbstractQuestion{
         return this.difficulty;
     }
 
-    public int getQuestionPoints(){
+    public abstract int getPointsAfterValidation();
+
+    protected int getQuestionPoints(){
         if(this.isAnswerCorrect()){
-            if(this.difficulty == Resources.QuestionDifficulty.Low){
-                return Resources.DifficultyPoints.Low.getPoints();
-            }else if(this.difficulty == Resources.QuestionDifficulty.Medium){
-                return Resources.DifficultyPoints.Medium.getPoints();
+            if(this.difficulty == Resources.QuestionDifficulty.LOW){
+                return Resources.QuestionDifficulty.LOW.getPoints();
+            }else if(this.difficulty == Resources.QuestionDifficulty.MEDIUM){
+                return Resources.QuestionDifficulty.MEDIUM.getPoints();
             }else{
-                return Resources.DifficultyPoints.High.getPoints();
+                return Resources.QuestionDifficulty.HIGH.getPoints();
             }
         }else{
             return 0;
         }
     }
+
+    public boolean validateTextAttribute(String text){
+        return text != null && !text.isEmpty();
+    }
+
+    public boolean validateDifficulty(Resources.QuestionDifficulty questionDifficulty){
+        return questionDifficulty != null;
+    }
+
+    public abstract boolean validateQuestion();
 }

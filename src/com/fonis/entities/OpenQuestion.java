@@ -6,4 +6,14 @@ public class OpenQuestion extends AbstractQuestion{
     public boolean isAnswerCorrect(){
         return false;
     }
+
+    @Override
+    public int getPointsAfterValidation(){
+        return 0;
+    }
+
+    @Override
+    public boolean validateQuestion(){
+        return false;
+    }
 }
