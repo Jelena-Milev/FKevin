@@ -236,9 +236,29 @@ Koja kompanija proizvodi Honor mobilne telefone?
 Huawei 
 
 Q37: Difficulty: Medium
+Ako funkcija u C-u ne vraća ništa, piše se:
+a) void *
+b) int
+c) none
+d) no
 
 Q38: Difficulty: Medium
+Funkcije printf i scanf su deo koje biblioteke?
+a) ctype.h
+b) string.h
+c) stdio.h *
+d) lib.h
 
 Q39: Difficulty: Medium
+For petlja se koristi kada?
+a) Samo kod nizova
+b) Samo kod lista
+c) Kada se zna tačan broj iteracija *
+d) Kada se ne zna tačan broj iteracija
 
 Q40: Difficulty: Medium
+While petlja se koristi kada?
+a) Samo kod nizova
+b) Samo kod lista
+c) Kada se zna tačan broj iteracija 
+d) Kada se ne zna tačan broj iteracija *
