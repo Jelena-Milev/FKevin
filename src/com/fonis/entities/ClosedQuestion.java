@@ -69,15 +69,7 @@ public class ClosedQuestion extends AbstractQuestion{
 
     @Override
     public String toString(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Question Text: ").append(this.questionText);
-        stringBuilder.append("\nPossible answers: \n");
-        for(int i = 0; i < this.possibleAnswers.length; ++i){
-            stringBuilder.append(i).append(") ").append(this.possibleAnswers[i]).append("\n");
-        }
-        stringBuilder.append("Guessed answer: ").append(this.guessedAnswer);
-        stringBuilder.append("\nCorrect answer: ").append(this.correctAnswer);
-        return stringBuilder.toString();
+        return this.questionText;
     }
 
 }

@@ -14,6 +14,9 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+//        String appLocation=System.getProperty("user.dir");
+//        System.out.println(appLocation);
+//        System.out.println("home: "+System.getProperty("user.home"));
     }
 
 

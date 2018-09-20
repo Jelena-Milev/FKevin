@@ -35,4 +35,8 @@ public class OpenQuestion extends AbstractQuestion {
         }
         return true;
     }
+
+    public String toString(){
+        return this.questionText;
+    }
 }

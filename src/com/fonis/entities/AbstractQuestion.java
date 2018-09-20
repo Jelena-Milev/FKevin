@@ -10,6 +10,9 @@ public abstract class AbstractQuestion {
 
     protected abstract boolean isAnswerCorrect();
 
+    public abstract int getPointsAfterValidation();
+
+    public abstract boolean validateQuestion();
 
     public String getQuestionText() {
         return this.questionText;
@@ -54,10 +57,6 @@ public abstract class AbstractQuestion {
         }
         this.difficulty = questionDifficulty;
     }
-
-    public abstract int getPointsAfterValidation();
-
-    public abstract boolean validateQuestion();
 
     protected int getQuestionPoints() {
         if (this.isAnswerCorrect()) {

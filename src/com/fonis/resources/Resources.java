@@ -41,10 +41,14 @@ public class Resources {
         }
     }
 
+    private static int lowQuestionPoints=1;
+    private static int mediumQuestionPoints=3;
+    private static int highQuestionPoints=5;
+
     public enum QuestionDifficulty {
-        LOW (1),
-        MEDIUM (3),
-        HIGH (5);
+        LOW (lowQuestionPoints),
+        MEDIUM (mediumQuestionPoints),
+        HIGH (highQuestionPoints);
 
         private final int points;
 
