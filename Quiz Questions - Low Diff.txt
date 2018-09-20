@@ -178,35 +178,84 @@ c) while()
 d) goto()
 
 Q34: Difficulty: Low
+Šta je veće, ROM ili RAM memorija?
+RAM
 
 Q35: Difficulty: Low
+i7 je procesor? tačno/netačno
+Tačno
 
 Q36: Difficulty: Low
+Šta je brže, DDR2 ili DDR3 RAM memorija?
+DDR3
 
 Q37: Difficulty: Low
+Šta je starije, Python ili C?
+C
 
 Q38: Difficulty: Low
+Šta je starije, Windows XP ili Windows Vista?
+XP
 
 Q39: Difficulty: Low
+Koja je aktivna verzija Windows-a?
+Windows 10
 
 Q40: Difficulty: Low
+C++ je programski jezik? tačno/netačno
+Tačno
 
 Q41: Difficulty: Low
+Photoshop je programski jezik? tačno/netačno
+Netačno
 
 Q42: Difficulty: Low
+Python je programski jezik? tačno/netačno
+Tačno
 
 Q43: Difficulty: Low
+Linux je programski jezik? tačno/netačno
+Tačno
 
 Q44: Difficulty: Low
+Koja kompanija je napravila igricu FIFA?
+a) Bethesda
+b) Konami
+c) EA *
+d) Rockstar
 
 Q45: Difficulty: Low
+Koja kompanija je napravila igricu PES?
+a) Bethesda
+b) Konami *
+c) EA 
+d) Rockstar
 
 Q46: Difficulty: Low
+Koja kompanija je napravila igricu GTA?
+a) Bethesda
+b) Konami  
+c) EA 
+d) Rockstar *
 
 Q47: Difficulty: Low
+ROM memorija je prenosna? tačno/netačno
+Netačno
 
 Q48: Difficulty: Low
+Fleš memorija je prenosna? tačno/netačno
+Tačno
 
 Q49: Difficulty: Low
+Koja od sledećih ekstenzija se koristi za slike?
+a) .doc
+b) .txt
+c) .bmp *
+d) .xlsx
 
 Q50: Difficulty: Low
+Koja od sledećih ekstenzija se koristi za excel fajlove?
+a) .doc
+b) .txt
+c) .bmp 
+d) .xlsx *
