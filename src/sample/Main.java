@@ -1,7 +1,5 @@
 package sample;
 
-import com.fonis.resources.Resources;
-import com.fonis.services.ParsingServiceNeca;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +19,7 @@ public class Main extends Application implements Initializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../com/fonis/gui/fxmls/menu.fxml"));
         primaryStage.setTitle("FKevin");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

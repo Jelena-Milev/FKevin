@@ -28,13 +28,15 @@ public class ClosedQuestion extends AbstractQuestion{
             return false;
         }
         for(String possibleAnswer: possibleAnswers){
-            if(!this.validateTextAttribute(possibleAnswer)){
+            if(!this.validateTextAttribute(possibleAnswer) ||
+                    possibleAnswer.toLowerCase().equals(this.correctAnswer.toLowerCase())){
                 return false;
             }
         }
         if(getDuplicatedPossibleAnswer(possibleAnswers)!=-1){
             return false;
         }
+
         return true;
     }
 

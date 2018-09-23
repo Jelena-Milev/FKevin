@@ -3,6 +3,7 @@ package com.fonis.entities;
 import com.fonis.resources.Resources;
 import com.fonis.services.ParsingServiceNeca;
 import com.google.gson.JsonElement;
+import sample.Model;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -94,13 +95,13 @@ public abstract class AbstractQuestion {
         return this.questionText.toLowerCase().equals(that.questionText.toLowerCase());
     }
 
-    public void editExistingQuestion(AbstractQuestion newQuestion, List<AbstractQuestion> questions, Resources.Entities entityType) {
-        ParsingServiceNeca service=new ParsingServiceNeca();
-        if (checkForDuplicates(newQuestion, questions) != null)
+    public void editExistingQuestion(AbstractQuestion newQuestion, Resources.Entities entityType,
+                                     ParsingServiceNeca parsingService, boolean backup) {
+        if (this.checkForDuplicates(newQuestion, Model.questions) != null)
             throw new IllegalStateException("This question already exists!");
 
-        Collections.replaceAll(questions, this, newQuestion);
-        service.parseEntitiesToJson(questions, entityType, true);
+        Collections.replaceAll(Model.questions, this, newQuestion);
+        parsingService.parseEntitiesToJson(Model.getQuestionsByType(entityType), entityType, backup);
     }
 
     private AbstractQuestion checkForDuplicates(AbstractQuestion newQuestion, List<AbstractQuestion> questions) {

@@ -1,4 +1,4 @@
-package sample;
+package com.fonis.gui.contollers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,10 +15,10 @@ public class MenuController {
 
     public void questionOptionButtonClicked(ActionEvent event) throws IOException {
 
-        Parent addQuestionParent = FXMLLoader.load(getClass().getResource("questionOptions.fxml"));
+        Parent questionOptionsParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/questionOptions.fxml"));
         Stage primaryStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 
-        Scene scene = new Scene(addQuestionParent);
+        Scene scene = new Scene(questionOptionsParent);
         primaryStage.setScene(scene);
         primaryStage.show();
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.QuestionOptionsController">
+<SplitPane dividerPositions="0.3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fonis.gui.contollers.QuestionOptionsController">
   <items>
       <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
          <children>
@@ -33,22 +33,19 @@
                   <RowConstraints maxHeight="52.0" minHeight="20.0" prefHeight="45.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox alignment="CENTER" prefHeight="47.0" prefWidth="91.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="91.0" spacing="10.0" GridPane.rowSpan="2">
                      <children>
                         <Label alignment="BOTTOM_CENTER" text="Question text" />
-                        <TextField fx:id="questionText" />
+                        <TextArea fx:id="questionText" editable="false" />
                      </children>
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
-                     <padding>
-                        <Insets bottom="20.0" top="20.0" />
-                     </padding>
                   </VBox>
-                  <VBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="1">
+                  <VBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="2">
                      <children>
                         <Label text="Correct answer" />
-                        <TextField fx:id="correctAnswer" alignment="CENTER" />
+                        <TextField fx:id="correctAnswer" alignment="CENTER" editable="false" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" top="20.0" />
@@ -57,7 +54,7 @@
                   <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1">
                      <children>
                         <Label text="Possible answer 1" />
-                        <TextField fx:id="possibleAnswer1" alignment="CENTER" />
+                        <TextField fx:id="possibleAnswer1" alignment="CENTER" editable="false" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" top="20.0" />
@@ -66,7 +63,7 @@
                   <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label text="Possible answer 2" />
-                        <TextField fx:id="possibleAnswer2" />
+                        <TextField fx:id="possibleAnswer2" editable="false" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" top="20.0" />
@@ -75,7 +72,7 @@
                   <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Label text="Possible answer 3" />
-                        <TextField fx:id="possibleAnswer3" />
+                        <TextField fx:id="possibleAnswer3" editable="false" />
                      </children>
                   </VBox>
                </children>
@@ -85,25 +82,33 @@
             </GridPane>
          </center>
          <top>
-            <HBox alignment="BOTTOM_CENTER" spacing="100.0" BorderPane.alignment="BOTTOM_LEFT">
+            <HBox alignment="CENTER" spacing="70.0" BorderPane.alignment="CENTER">
                <children>
-                  <ChoiceBox fx:id="questionType" onAction="#questionTypeChosen" prefWidth="150.0" value="ClosedQuestion" />
-                  <ComboBox fx:id="difficulty" prefWidth="150.0" value="LOW" />
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Question type" />
+                        <ComboBox fx:id="questionType" disable="true" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Question difficulty" />
+                        <ComboBox fx:id="difficulty" disable="true" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+                  <ToggleButton fx:id="backupBtn" mnemonicParsing="false" text="Backup" />
                </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
                <BorderPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets top="10.0" />
                </BorderPane.margin>
             </HBox>
          </top>
          <bottom>
             <HBox alignment="BOTTOM_CENTER" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
-                  <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="40.0" prefWidth="130.0" text="Add" />
-                  <Button fx:id="editBtn" alignment="CENTER" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Edit" />
-                  <Button fx:id="removeBtn" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Remove" />
+                  <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="40.0" prefWidth="130.0" text="Add" />
+                  <Button fx:id="editBtn" onAction="#editButtonClicked" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Edit" />
+                  <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Remove" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
