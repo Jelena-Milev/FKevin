@@ -80,6 +80,7 @@ public class QuestionsGUI extends Application {
 
         BorderPane borderPaneForCenter=new BorderPane();
         GridPane paneForFields=new GridPane();
+        paneForFields.setGridLinesVisible(true);
         HBox hBoxForButtons=new HBox();
 
         TextField questionText = new TextField();

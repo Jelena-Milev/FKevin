@@ -137,30 +137,4 @@ public class ParsingService {
 
         changeValueOfPropertyInJsonFile(entity, jsonArrayOfEntities, backUpFile);
     }
-
-    // #TODO move logic to question
-    public void editExistingQuestion(AbstractQuestion questionForEditing,
-                                                AbstractQuestion newQuestion, List<AbstractQuestion> questions, Entities entity) {
-
-        if (checkForDuplicates(questionForEditing, newQuestion, questions) != null)
-            throw new IllegalArgumentException("This question already exists!");
-
-        questionForEditing=newQuestion;
-
-        JsonElement questionsAsJsonElement = gson.toJsonTree(questions);
-        changeValueOfPropertyInJsonFile(entity, questionsAsJsonElement, true);
-    }
-
-    // #TODO move logic to question
-    public AbstractQuestion checkForDuplicates(AbstractQuestion questionForEditing,
-                                                AbstractQuestion newQuestion, List<AbstractQuestion> questions) {
-        for (AbstractQuestion question :
-                questions) {
-            if (question != questionForEditing && question.equals(newQuestion))
-                return question;
-        }
-        return null;
-    }
-
-
 }

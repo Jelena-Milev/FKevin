@@ -39,6 +39,12 @@ public class Resources {
         public Class getEntityClass(){
             return this.entityClass;
         }
+
+
+        @Override
+        public String toString() {
+            return this.entityClass.getSimpleName();
+        }
     }
 
     private static int lowQuestionPoints=1;

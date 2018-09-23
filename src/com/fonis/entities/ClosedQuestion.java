@@ -2,6 +2,8 @@ package com.fonis.entities;
 
 import com.fonis.resources.Resources;
 
+import java.util.LinkedList;
+
 public class ClosedQuestion extends AbstractQuestion{
 
     private String[] possibleAnswers;
@@ -16,12 +18,11 @@ public class ClosedQuestion extends AbstractQuestion{
 
     public void setPossibleAnswers(String[] possibleAnswers){
         if(!this.validatePossibleAnswers(possibleAnswers)){
-            throw new IllegalArgumentException("One or more possible answers are null or empty.");
+            throw new IllegalArgumentException("One or more possible answers are null or empty or there is duplicated answers.");
         }
         this.possibleAnswers = possibleAnswers;
     }
 
-    // #TODO check for duplicate answers
     public boolean validatePossibleAnswers(String[] possibleAnswers){
         if(possibleAnswers == null || possibleAnswers.length != 3){
             return false;
@@ -30,6 +31,9 @@ public class ClosedQuestion extends AbstractQuestion{
             if(!this.validateTextAttribute(possibleAnswer)){
                 return false;
             }
+        }
+        if(getDuplicatedPossibleAnswer(possibleAnswers)!=-1){
+            return false;
         }
         return true;
     }
@@ -52,6 +56,16 @@ public class ClosedQuestion extends AbstractQuestion{
             return false;
         }
         return true;
+    }
+
+    private int getDuplicatedPossibleAnswer(String[] possibleAnswers) {
+        for (int i = 0; i < possibleAnswers.length - 1; i++) {
+            for (int j = i + 1; j < possibleAnswers.length; j++) {
+                if (possibleAnswers[i].toLowerCase().equals(possibleAnswers[j].toLowerCase()))
+                    return i;
+            }
+        }
+        return -1;
     }
 
     @Override
