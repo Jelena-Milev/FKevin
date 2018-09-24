@@ -58,13 +58,20 @@ public class ParsingServiceNeca{
 
         // Add new entity
         JsonElement newEntity = this.gson.toJsonTree(entity);
+        String identifyingAttribute = newEntity.getAsJsonObject().get(entityType.getIdentifyingAttribute()).getAsString().toLowerCase();
+
         if(entitiesElement == null){
             entitiesElement = newEntity;
-        }else if(!entitiesElement.getAsJsonArray().contains(newEntity)){
+        }else if(!entitiesElement.getAsJsonArray().toString().toLowerCase().contains(identifyingAttribute)){
             entitiesElement.getAsJsonArray().add(newEntity);
         }
 
         this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupFile);
+    }
+
+    private boolean isAlreadyInArray(JsonElement newEntity, JsonArray entityList){
+        String questionText = newEntity.getAsJsonObject().get("questionText").toString();
+        return entityList.toString().toLowerCase().contains(questionText.toLowerCase());
     }
 
     /**

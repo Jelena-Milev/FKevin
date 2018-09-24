@@ -14,22 +14,28 @@ public class Resources {
 
     // Entity names
     public enum Entities{
-        PARTICIPANT("Participants", "Participants.json", Participant.class),
-        OPEN_QUESTION("OpenQuestions", "Questions.json", OpenQuestion.class),
-        CLOSED_QUESTION("ClosedQuestions", "Questions.json", ClosedQuestion.class);
+        PARTICIPANT("Participants", "email", "Participants.json", Participant.class),
+        OPEN_QUESTION("OpenQuestions", "questionText", "Questions.json", OpenQuestion.class),
+        CLOSED_QUESTION("ClosedQuestions", "questionText", "Questions.json", ClosedQuestion.class);
 
         private final String entityName;
+        private final String identifyingAttribute;
         private final String jsonFileName;
         private final Class entityClass;
 
-        Entities(String entityName, String jsonFieName, Class entityClass){
+        Entities(String entityName, String identifyingAttribtue, String jsonFieName, Class entityClass){
             this.entityName = entityName;
+            this.identifyingAttribute = identifyingAttribtue;
             this.jsonFileName = jsonFieName;
             this.entityClass = entityClass;
         }
 
         public String getEntityName(){
             return this.entityName;
+        }
+
+        public String getIdentifyingAttribute(){
+            return this.identifyingAttribute;
         }
 
         public String getEntityJsonFileName(){
