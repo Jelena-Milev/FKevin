@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import sample.Model;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,7 +26,8 @@ import java.util.ResourceBundle;
 public class AddQuestionController implements Initializable {
 
 
-    ParsingServiceNeca service = new ParsingServiceNeca();
+    ParsingServiceNeca parsingService = new ParsingServiceNeca();
+
     @FXML
     ComboBox questionType;
     @FXML
@@ -84,7 +86,8 @@ public class AddQuestionController implements Initializable {
         AbstractQuestion newQuestion = getQuestionFromFields();
         if (newQuestion != null) {
             try {
-                service.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), isBackupButtonSelected());
+                parsingService.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), isBackupButtonSelected());
+                Model.updateObservableQuestions(parsingService);
             } catch (IllegalStateException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("");

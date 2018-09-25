@@ -7,6 +7,9 @@ import com.fonis.resources.Resources;
 import com.fonis.services.ParsingServiceNeca;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,37 +57,41 @@ public class QuestionOptionsController implements Initializable {
     Button removeBtn;
     @FXML ToggleButton backupBtn;
 
-    ParsingServiceNeca service = new ParsingServiceNeca();
-//    #TODO remove filling Model.question from initialization because questions load again
-//      when cancel is pressed.
+    private ObservableList<AbstractQuestion> questionObservableList=Model.questionObservableList;
+
+    private ParsingServiceNeca service = new ParsingServiceNeca();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        questionsList.getItems().addAll(Model.questions);
+        questionsList.getItems().setAll(this.questionObservableList);
+        removeBtn.setDisable(true);
+        editBtn.setDisable(true);
+
+        this.questionObservableList.addListener(new ListChangeListener<AbstractQuestion>() {
+            @Override
+            public void onChanged(Change<? extends AbstractQuestion> c) {
+                questionsList.getItems().setAll(questionObservableList);
+            }
+        });
 
         questionsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
           @Override
           public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 
               if (newValue != null) {
-              clearFields();
               showQuestion((AbstractQuestion) newValue);
               removeBtn.setDisable(false);
               editBtn.setDisable(false);
               QuestionOptionsController.selectedQuestion=(AbstractQuestion) newValue;
               }
               if (newValue == null) {
+               clearFields();
                removeBtn.setDisable(true);
                editBtn.setDisable(true);
           }
           }
         });
-//        questionsList.getItems().addListener(new ListChangeListener() {
-//            @Override
-//            public void onChanged(Change c) {
-//
-//            }
-//        });
     }
 
     public void backButtonClicked(ActionEvent event) throws IOException {
@@ -144,6 +151,7 @@ public class QuestionOptionsController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 service.removeEntityFromJsonFile(oldQuestion, getQuestionEntityType(oldQuestion), isBackupButtonSelected());
+                Model.updateObservableQuestions(this.service);
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -155,6 +163,7 @@ public class QuestionOptionsController implements Initializable {
     }
 
     private void showQuestion(AbstractQuestion question) {
+        clearFields();
         questionType.setValue(question.getClass().getSimpleName());
         difficulty.getSelectionModel().select(question.getDifficulty());
         questionText.setText(question.getQuestionText());

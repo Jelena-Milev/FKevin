@@ -75,7 +75,7 @@
                     <VBox alignment="CENTER" spacing="10.0">
                         <children>
                             <Label text="Question type" />
-                            <ComboBox fx:id="questionType" disable="true" onAction="#questionTypeChosen" prefHeight="25.0" prefWidth="150.0" value="ClosedQuestion" />
+                            <ComboBox fx:id="questionType" disable="true" prefHeight="25.0" prefWidth="150.0" value="ClosedQuestion" />
                         </children>
                     </VBox>
                     <VBox alignment="CENTER" spacing="10.0">

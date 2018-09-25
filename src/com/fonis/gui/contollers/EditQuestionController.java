@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import sample.Model;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,6 +82,7 @@ public class EditQuestionController implements Initializable {
                 try {
                     questionForEditing.editExistingQuestion(newQuestion, this.getQuestionEntityType(newQuestion),
                             parsingService, this.isBackupButtonSelected());
+                    Model.updateObservableQuestions(parsingService);
                 } catch (IllegalStateException e) {
                     Alert error=new Alert(Alert.AlertType.ERROR);
                     error.setContentText("");
@@ -91,6 +93,7 @@ public class EditQuestionController implements Initializable {
             }
         }
     }
+
 
     public void cancelButtonClicked(ActionEvent event) throws IOException {
         Parent questionOptionsParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/questionOptions.fxml"));
@@ -107,6 +110,7 @@ public class EditQuestionController implements Initializable {
 
     private void showQuestion(AbstractQuestion question) {
         questionType.setValue(question.getClass().getSimpleName());
+        questionTypeChosen();
 //        difficulty.setValue(question.getDifficulty().toString());
         difficulty.getSelectionModel().select(question.getDifficulty().toString());
         questionText.setText(question.getQuestionText());
