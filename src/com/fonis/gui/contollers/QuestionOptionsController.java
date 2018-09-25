@@ -59,7 +59,7 @@ public class QuestionOptionsController implements Initializable {
 //      when cancel is pressed.
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        updateModelQuestons();
+
         questionsList.getItems().addAll(Model.questions);
 
         questionsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
@@ -174,12 +174,6 @@ public class QuestionOptionsController implements Initializable {
         possibleAnswer1.setText("");
         possibleAnswer2.setText("");
         possibleAnswer3.setText("");
-    }
-
-    private void updateModelQuestons(){
-        Model.questions.clear();
-        Model.questions.addAll(service.getEntitiesJsonAsList(Resources.Entities.OPEN_QUESTION));
-        Model.questions.addAll(service.getEntitiesJsonAsList(Resources.Entities.CLOSED_QUESTION));
     }
 
     public Resources.Entities getQuestionEntityType(AbstractQuestion question){

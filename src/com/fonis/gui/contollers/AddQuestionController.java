@@ -83,13 +83,9 @@ public class AddQuestionController implements Initializable {
     public void saveButtonClicked() {
         AbstractQuestion newQuestion = getQuestionFromFields();
         if (newQuestion != null) {
-            Boolean backup = false;
-            if (backupBtn.isSelected()) {
-                backup = true;
-            }
             try {
-                service.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), backup);
-            } catch (Exception e) {
+                service.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), isBackupButtonSelected());
+            } catch (IllegalStateException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("");
                 alert.setContentText(e.getMessage());
@@ -158,6 +154,15 @@ public class AddQuestionController implements Initializable {
         } else if(selectedDifficulty.equals("MEDIUM")){
             return Resources.QuestionDifficulty.MEDIUM;
         } else return Resources.QuestionDifficulty.HIGH;
+    }
+
+    private boolean isBackupButtonSelected(){
+        if(backupBtn.isSelected()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 

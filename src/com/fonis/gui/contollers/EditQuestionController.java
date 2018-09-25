@@ -50,6 +50,13 @@ public class EditQuestionController implements Initializable {
     @FXML
     ToggleButton backupBtn;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        difficulty.getItems().addAll(Resources.QuestionDifficulty.values());
+        this.questionForEditing=QuestionOptionsController.getSelectedQuestion();
+        this.showQuestion(questionForEditing);
+    }
+
     public void questionTypeChosen() {
         if (questionType.getSelectionModel().getSelectedItem().toString().equals("OpenQuestion")) {
             vBoxPossible1.setVisible(false);
@@ -98,17 +105,10 @@ public class EditQuestionController implements Initializable {
         primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        difficulty.getItems().addAll(Resources.QuestionDifficulty.values());
-        this.questionForEditing=QuestionOptionsController.getSelectedQuestion();
-        this.showQuestion(questionForEditing);
-    }
-
     private void showQuestion(AbstractQuestion question) {
         questionType.setValue(question.getClass().getSimpleName());
-        difficulty.setValue(question.getDifficulty().toString());
-//        difficulty.getSelectionModel().select(question.getDifficulty().toString());
+//        difficulty.setValue(question.getDifficulty().toString());
+        difficulty.getSelectionModel().select(question.getDifficulty().toString());
         questionText.setText(question.getQuestionText());
         correctAnswer.setText(question.getCorrectAnswer());
         if (question instanceof ClosedQuestion) {

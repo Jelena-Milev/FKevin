@@ -62,10 +62,15 @@ public class ParsingServiceNeca{
 
         if(entitiesElement == null){
             entitiesElement = newEntity;
-        }else if(!entitiesElement.getAsJsonArray().toString().toLowerCase().contains(identifyingAttribute)){
+//        }else if(!entitiesElement.getAsJsonArray().toString().toLowerCase().contains(identifyingAttribute)){
+//            entitiesElement.getAsJsonArray().add(newEntity);
+//        }
+        }else {
+            if (entitiesElement.getAsJsonArray().toString().toLowerCase().trim().contains(identifyingAttribute.trim())) {
+                throw new IllegalStateException("This question already exists!");
+            }
             entitiesElement.getAsJsonArray().add(newEntity);
         }
-
         this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupFile);
     }
 
