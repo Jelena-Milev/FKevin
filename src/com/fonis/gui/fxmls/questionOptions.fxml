@@ -63,7 +63,7 @@
                   <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label text="Possible answer 2" />
-                        <TextField fx:id="possibleAnswer2" editable="false" />
+                        <TextField fx:id="possibleAnswer2" alignment="CENTER" editable="false" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" top="20.0" />
@@ -72,7 +72,7 @@
                   <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Label text="Possible answer 3" />
-                        <TextField fx:id="possibleAnswer3" editable="false" />
+                        <TextField fx:id="possibleAnswer3" alignment="CENTER" editable="false" />
                      </children>
                   </VBox>
                </children>
@@ -107,7 +107,7 @@
             <HBox alignment="BOTTOM_CENTER" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
                   <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="40.0" prefWidth="130.0" text="Add" />
-                  <Button fx:id="editBtn" onAction="#editButtonClicked" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Edit" />
+                  <Button fx:id="editBtn" alignment="CENTER" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Edit" />
                   <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Remove" />
                </children>
                <padding>

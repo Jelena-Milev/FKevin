@@ -82,17 +82,20 @@ public class AddQuestionController implements Initializable {
         primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
     }
 
-    public void saveButtonClicked() {
+    public void saveButtonClicked(ActionEvent event) {
         AbstractQuestion newQuestion = getQuestionFromFields();
         if (newQuestion != null) {
             try {
                 parsingService.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), isBackupButtonSelected());
                 Model.updateObservableQuestions(parsingService);
+                cancelButtonClicked(event);
             } catch (IllegalStateException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("");
                 alert.setContentText(e.getMessage());
                 alert.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -167,5 +170,12 @@ public class AddQuestionController implements Initializable {
             return false;
         }
     }
+
+    private void returnToQuestionPreview(){
+
+
+
+    }
+
 }
 

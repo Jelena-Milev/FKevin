@@ -21,6 +21,7 @@ public class Main extends Application implements Initializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Resources.APP_LOCATION=Resources.getAppLocation();
         Model.updateModelQuestion(parsingService);
         Model.updateObservableQuestions(parsingService);
         Parent root = FXMLLoader.load(getClass().getResource("../com/fonis/gui/fxmls/menu.fxml"));
