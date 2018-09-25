@@ -4,7 +4,7 @@ import com.fonis.entities.AbstractQuestion;
 import com.fonis.entities.ClosedQuestion;
 import com.fonis.entities.OpenQuestion;
 import com.fonis.resources.Resources;
-import com.fonis.services.ParsingServiceNeca;
+import com.fonis.services.ParsingService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class EditQuestionController implements Initializable {
 
-   private ParsingServiceNeca parsingService = new ParsingServiceNeca();
+   private ParsingService parsingService = new ParsingService();
    private AbstractQuestion questionForEditing;
     @FXML
     ComboBox questionType;

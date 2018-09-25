@@ -4,7 +4,7 @@ import com.fonis.entities.AbstractQuestion;
 import com.fonis.entities.ClosedQuestion;
 import com.fonis.entities.OpenQuestion;
 import com.fonis.resources.Resources;
-import com.fonis.services.ParsingServiceNeca;
+import com.fonis.services.ParsingService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -54,7 +54,7 @@ public class QuestionOptionsController implements Initializable {
     Button removeBtn;
     @FXML ToggleButton backupBtn;
 
-    ParsingServiceNeca service = new ParsingServiceNeca();
+    ParsingService service = new ParsingService();
 //    #TODO remove filling Model.question from initialization because questions load again
 //      when cancel is pressed.
     @Override

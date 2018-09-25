@@ -1,8 +1,6 @@
 package com.fonis.services;
 
-import com.fonis.entities.AbstractQuestion;
 import com.fonis.resources.Resources;
-import com.fonis.resources.Resources.Entities;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -14,127 +12,143 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class ParsingService {
+// #TODO Fix saving to JSON files with multiple json objects in them
+// #TODO Merge with other parsing services for unique parsing service
+public class ParsingService{
+    private final Gson gson;
 
-    private Gson gson;
-
-    public ParsingService() {
+    public ParsingService(){
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
-    public List getEntitiesAsList(Entities entity) {
-        Type collectionType = TypeToken.getParameterized(List.class, entity.getEntityClass()).getType();
-        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entity);
-        List entitiesInList = gson.fromJson(entitiesInJsonArray, collectionType);
-        return entitiesInList;
+    /**
+     * Converts a list of entities into a JSON file.
+     * @param entities List of entities to be saved to the entity json file
+     * @param entityType The type of entity
+     * @param backupFile If set to true, the entity json file will be backed up
+     *                      to the backup folder. If set to false, the entity json file will
+     *                      be overwritten with the new one.
+     */
+    public void parseEntitiesToJson(List<?> entities, Resources.Entities entityType, boolean backupFile){
+        JsonElement entitiesElement = this.gson.toJsonTree(entities);
+
+        this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupFile);
     }
 
+    /**
+     * @param entityType The type of entity
+     * @return List of objects, of entered entity type, generated from entity json file.
+     */
+    public <T> List<T> getEntitiesJsonAsList(Resources.Entities entityType){
+        JsonElement entitiesElement = this.getEntitiesJsonAsElement(entityType);
 
-    public JsonArray getEntitiesAsJsonArray(Resources.Entities entity) {
-        String propertyName = entity.getEntityName();
-        JsonArray entitiesInJsonArray = null;
-        String pathToJsonFile = Resources.DATA_LOCATION + entity.getEntityJsonFileName();
-        JsonObject jsonFileContent = getFileContentAsJsonObject(pathToJsonFile);
-        if (jsonFileContent != null && jsonFileContent.has(propertyName)) {
-            entitiesInJsonArray = jsonFileContent.getAsJsonArray(propertyName);
+        // Convert JSON element to list
+        Type listType = TypeToken.getParameterized(List.class, entityType.getEntityClass()).getType();
+        return this.gson.fromJson(entitiesElement, listType);
+    }
+
+    /**
+     * Adds the entity to the currently active entity json file.
+     * @param entity Entity to be added.
+     * @param entityType Type of entity
+     * @param backupFile If set to true, a backup of the current entity json file will be created.
+     */
+    public void addEntityToJsonFile(Object entity, Resources.Entities entityType, boolean backupFile){
+        JsonElement entitiesElement = this.getEntitiesJsonAsElement(entityType);
+
+        // Add new entity
+        JsonElement newEntity = this.gson.toJsonTree(entity);
+        String identifyingAttribute = newEntity.getAsJsonObject().get(entityType.getIdentifyingAttribute()).getAsString().toLowerCase();
+
+        if(entitiesElement == null){
+            entitiesElement = newEntity;
+        }else if(!entitiesElement.getAsJsonArray().toString().toLowerCase().contains(identifyingAttribute)){
+            entitiesElement.getAsJsonArray().add(newEntity);
         }
-        return entitiesInJsonArray;
+
+        this.writeElementToEntitiesJsonFile(entitiesElement, entityType, backupFile);
     }
 
-    public JsonObject getFileContentAsJsonObject(String fileName) {
-        JsonObject fileContent = null;
-        try (JsonReader jsonReader = new JsonReader(new FileReader(fileName))) {
-            fileContent = gson.fromJson(jsonReader, JsonObject.class);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+    private boolean isAlreadyInArray(JsonElement newEntity, JsonArray entityList){
+        String questionText = newEntity.getAsJsonObject().get("questionText").toString();
+        return entityList.toString().toLowerCase().contains(questionText.toLowerCase());
+    }
+
+    /**
+     * @param entityType Type of entity
+     * @return The entity json file converted into a JsonElement.
+     */
+    private JsonElement getEntitiesJsonAsElement(Resources.Entities entityType){
+        JsonObject jsonFileContent = this.getJsonFileAsObject(entityType);
+
+        return jsonFileContent.get(entityType.getEntityName());
+    }
+
+    private JsonObject getJsonFileAsObject(Resources.Entities entityType){
+        JsonObject jsonFileContent = null;
+
+        try(JsonReader jsonReader = new JsonReader(new FileReader(Resources.DATA_LOCATION + entityType.getEntityJsonFileName()))){
+            jsonFileContent = this.gson.fromJson(jsonReader, JsonObject.class);
+        }catch(FileNotFoundException e){
+            System.out.println("No " + entityType.getEntityJsonFileName() + " file available.");
+        }catch(IOException e){
             e.printStackTrace();
         }
-        return fileContent;
+        return jsonFileContent;
     }
 
+    private void writeElementToEntitiesJsonFile(JsonElement entities, Resources.Entities entityType, boolean backupFile){
+        // Backup old file, save to new file
+        if(backupFile){
+            this.backupEntitiesJsonFile(entityType);
+        }
 
-
-//    private void changeValueOfPropertyInJsonFile(String propertyName, JsonElement newPropertyValue,
-//                                                    String fileName, boolean backUpFile) {
-    private void changeValueOfPropertyInJsonFile(Entities entity, JsonElement newPropertyValue,
-                                                 boolean backUpFile) {
-
-        String pathToJsonFile = Resources.DATA_LOCATION + entity.getEntityJsonFileName();
-        if (backUpFile)
-            backupFile(pathToJsonFile);
-
-        JsonObject jsonFileContent = getFileContentAsJsonObject(pathToJsonFile);
-
-//      If the file is empty, we have to create an object which we are going to write into the file.
-        if (jsonFileContent == null)
+        JsonObject jsonFileContent = this.getJsonFileAsObject(entityType);
+        if(jsonFileContent == null){
             jsonFileContent = new JsonObject();
+        }
 
-//      If an object from the file has a property named "Questions", we have to remove it in order to add it again
-//      with a changed value. If the object has not such a property, there is nothing to be removed, and we only have
-//      to add such a property.
-        if (jsonFileContent.has(entity.getEntityName()))
-            jsonFileContent.remove(entity.getEntityName());
+        if(jsonFileContent.has(entityType.getEntityName())){
+            jsonFileContent.remove(entityType.getEntityName());
+        }
 
-        jsonFileContent.add(entity.getEntityName(), newPropertyValue);
+        jsonFileContent.add(entityType.getEntityName(), entities);
 
-        try (FileWriter writer = new FileWriter(pathToJsonFile)) {
-            writer.write(gson.toJson(jsonFileContent));
-        } catch (IOException e) {
+        try(FileWriter writer = new FileWriter(Resources.DATA_LOCATION + entityType.getEntityJsonFileName())){
+            this.gson.toJson(jsonFileContent, writer);
+        }catch(IOException e){
             e.printStackTrace();
         }
     }
 
-    private void backupFile(String pathToOriginalFile) {
+    public void removeEntityFromJsonFile(Object entityForRemoving, Resources.Entities entityType, boolean backupFile){
+        JsonElement entityForRemovingAsJsonElement = this.gson.toJsonTree(entityForRemoving);
+        JsonElement entities = this.getEntitiesJsonAsElement(entityType);
 
-        File originalFile = new File(pathToOriginalFile);
-        String[] fileNameParts = originalFile.getName().split("[.]");
+        if(entities == null || entities.getAsJsonArray().size() == 0 || !entities.getAsJsonArray().contains(entityForRemovingAsJsonElement)){
+            throw new IllegalStateException("Entity not found in json file");
+        }
 
-        if (originalFile.exists()) {
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        entities.getAsJsonArray().remove(entityForRemovingAsJsonElement);
+        this.writeElementToEntitiesJsonFile(entities, entityType, backupFile);
+    }
+
+    /**
+     * Creates the backup of the currently active $entityName.json file. The backup word is added to the file name
+     * as well as the current date time in the dd-MM-yyyy HH-mm-ss format, and the file is placed in the backup folder
+     * @param entityType Name of the entity whose file should be backed up
+     */
+    private void backupEntitiesJsonFile(Resources.Entities entityType){
+        File originalFile = new File(Resources.DATA_LOCATION + entityType.getEntityJsonFileName());
+        if(originalFile.exists()){
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss");
             String currentDateTime = dateTimeFormatter.format(LocalDateTime.now());
-            File backupFile = new File(Resources.DATA_BACKUP_LOCATION + fileNameParts[0] + "-backup-" + currentDateTime + ".json");
-            try {
+            File backupFile = new File(Resources.DATA_BACKUP_LOCATION + entityType.getEntityName() + "-backup-" + currentDateTime + ".json");
+            try{
                 Files.copy(originalFile.toPath(), backupFile.toPath());
-
-            } catch (IOException e) {
+            }catch(IOException e){
                 e.printStackTrace();
             }
         }
-    }
-
-
-    public void addEntityToJsonFile(Object newEntity, Entities entity, boolean backUp)throws Exception {
-
-        JsonObject newEntityAsJsonObject = gson.toJsonTree(newEntity).getAsJsonObject();
-        JsonArray entitiesInJsonArray = getEntitiesAsJsonArray(entity);
-
-        if (entitiesInJsonArray == null)
-            entitiesInJsonArray = new JsonArray();
-
-        if (entitiesInJsonArray.contains(newEntityAsJsonObject))
-            throw new IllegalArgumentException("This entity already exist in the file!");
-
-        entitiesInJsonArray.add(newEntityAsJsonObject);
-
-        changeValueOfPropertyInJsonFile(entity, entitiesInJsonArray, backUp);
-    }
-
-
-    public void removeEntityFromJsonFile(Object entityForRemoving, Entities entity,
-                                            boolean backUpFile) throws Exception {
-        JsonObject entityForRemovingAsJsonObject = gson.toJsonTree(entityForRemoving).getAsJsonObject();
-
-        JsonArray jsonArrayOfEntities = getEntitiesAsJsonArray(entity);
-
-        if (jsonArrayOfEntities == null || jsonArrayOfEntities.size() == 0)
-            throw new IllegalStateException("File is empty! There is no entities to be removed!");
-
-        if (!jsonArrayOfEntities.contains(entityForRemovingAsJsonObject))
-            throw new IllegalArgumentException("The entity does not exist in the file!");
-
-        jsonArrayOfEntities.remove(entityForRemovingAsJsonObject);
-
-        changeValueOfPropertyInJsonFile(entity, jsonArrayOfEntities, backUpFile);
     }
 }

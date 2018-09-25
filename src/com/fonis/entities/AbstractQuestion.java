@@ -1,12 +1,10 @@
 package com.fonis.entities;
 
 import com.fonis.resources.Resources;
-import com.fonis.services.ParsingServiceNeca;
-import com.google.gson.JsonElement;
+import com.fonis.services.ParsingService;
 import sample.Model;
 
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public abstract class AbstractQuestion {
@@ -96,7 +94,7 @@ public abstract class AbstractQuestion {
     }
 
     public void editExistingQuestion(AbstractQuestion newQuestion, Resources.Entities entityType,
-                                     ParsingServiceNeca parsingService, boolean backup) {
+                                     ParsingService parsingService, boolean backup) {
         if (this.checkForDuplicates(newQuestion, Model.questions) != null)
             throw new IllegalStateException("This question already exists!");
 

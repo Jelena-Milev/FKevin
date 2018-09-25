@@ -6,11 +6,25 @@ import com.fonis.entities.Participant;
 
 public class Resources {
 
+    // Prevents init of class
+    private Resources(){}
+
     // #TODO set this to the location the application is running from, dynamically
     public static String APP_LOCATION = "";
 
     public static final String DATA_LOCATION = APP_LOCATION + "data/";
     public static final String DATA_BACKUP_LOCATION = DATA_LOCATION + "backup/";
+
+    private static int lowQuestionPoints = 1;
+    private static int mediumQuestionPoints = 3;
+    private static int highQuestionPoints = 5;
+
+    private static int numberOfLowQuestions = 5;
+    private static int numberOfMediumQuestions = 4;
+    private static int numberOfHighQuestions = 3;
+
+    public static final int TOTAL_NUMBER_OF_QUESTIONS = numberOfLowQuestions + numberOfMediumQuestions + numberOfHighQuestions;
+
 
     // Entity names
     public enum Entities{
@@ -53,29 +67,25 @@ public class Resources {
         }
     }
 
-    private static int lowQuestionPoints=1;
-    private static int mediumQuestionPoints=3;
-    private static int highQuestionPoints=5;
-
-    public enum QuestionDifficulty {
-        LOW (lowQuestionPoints),
-        MEDIUM (mediumQuestionPoints),
-        HIGH (highQuestionPoints);
+    public enum QuestionDifficulty{
+        LOW (lowQuestionPoints, numberOfLowQuestions),
+        MEDIUM (mediumQuestionPoints, numberOfMediumQuestions),
+        HIGH (highQuestionPoints, numberOfHighQuestions);
 
         private final int points;
+        private final int numberOfQuestions;
 
-        QuestionDifficulty(int points){
+        QuestionDifficulty(int points, int numberOfQuestions){
             this.points = points;
+            this.numberOfQuestions = numberOfQuestions;
         }
 
         public int getPoints(){
             return this.points;
         }
-    }
 
-    // #TODO to be removed together with Question class
-    @Deprecated
-    public enum EntityType{
-        Question, Pariticipant
+        public int getNumberOfQuestions(){
+            return this.numberOfQuestions;
+        }
     }
 }
