@@ -70,7 +70,7 @@ public class EditQuestionController implements Initializable {
         }
     }
 
-    public void saveButtonClicked(){
+    public void saveButtonClicked(ActionEvent event){
         AbstractQuestion newQuestion=this.getQuestionFromFields();
         if(newQuestion!=null){
             Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
@@ -83,12 +83,15 @@ public class EditQuestionController implements Initializable {
                     questionForEditing.editExistingQuestion(newQuestion, this.getQuestionEntityType(newQuestion),
                             parsingService, this.isBackupButtonSelected());
                     Model.updateObservableQuestions(parsingService);
+                    cancelButtonClicked(event);
                 } catch (IllegalStateException e) {
                     Alert error=new Alert(Alert.AlertType.ERROR);
                     error.setContentText("");
                     error.setTitle("Error");
                     error.setHeaderText(e.getMessage());
                     error.showAndWait();
+                }catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
