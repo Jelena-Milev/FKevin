@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import sample.Model;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,6 +51,13 @@ public class EditQuestionController implements Initializable {
     @FXML
     ToggleButton backupBtn;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        difficulty.getItems().addAll(Resources.QuestionDifficulty.values());
+        this.questionForEditing=QuestionOptionsController.getSelectedQuestion();
+        this.showQuestion(questionForEditing);
+    }
+
     public void questionTypeChosen() {
         if (questionType.getSelectionModel().getSelectedItem().toString().equals("OpenQuestion")) {
             vBoxPossible1.setVisible(false);
@@ -74,6 +82,7 @@ public class EditQuestionController implements Initializable {
                 try {
                     questionForEditing.editExistingQuestion(newQuestion, this.getQuestionEntityType(newQuestion),
                             parsingService, this.isBackupButtonSelected());
+                    Model.updateObservableQuestions(parsingService);
                 } catch (IllegalStateException e) {
                     Alert error=new Alert(Alert.AlertType.ERROR);
                     error.setContentText("");
@@ -84,6 +93,7 @@ public class EditQuestionController implements Initializable {
             }
         }
     }
+
 
     public void cancelButtonClicked(ActionEvent event) throws IOException {
         Parent questionOptionsParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/questionOptions.fxml"));
@@ -98,17 +108,11 @@ public class EditQuestionController implements Initializable {
         primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        difficulty.getItems().addAll(Resources.QuestionDifficulty.values());
-        this.questionForEditing=QuestionOptionsController.getSelectedQuestion();
-        this.showQuestion(questionForEditing);
-    }
-
     private void showQuestion(AbstractQuestion question) {
         questionType.setValue(question.getClass().getSimpleName());
-        difficulty.setValue(question.getDifficulty().toString());
-//        difficulty.getSelectionModel().select(question.getDifficulty().toString());
+        questionTypeChosen();
+//        difficulty.setValue(question.getDifficulty().toString());
+        difficulty.getSelectionModel().select(question.getDifficulty().toString());
         questionText.setText(question.getQuestionText());
         correctAnswer.setText(question.getCorrectAnswer());
         if (question instanceof ClosedQuestion) {

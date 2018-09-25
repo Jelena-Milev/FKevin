@@ -1,8 +1,10 @@
 package sample;
 
 import com.fonis.entities.AbstractQuestion;
-import com.fonis.entities.OpenQuestion;
 import com.fonis.resources.Resources;
+import com.fonis.services.ParsingService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -11,10 +13,17 @@ import java.util.Random;
 
 public class Model {
 
-    // Prevents init of class
+    // Prevents inti of class
     private Model(){}
 
-    public static List<AbstractQuestion> questions = new ArrayList<>();
+    public static List<AbstractQuestion> questions= new LinkedList<>();
+    public static ObservableList<AbstractQuestion> questionObservableList=FXCollections.observableList(Model.questions);
+
+    public static void updateModelQuestion(ParsingService parsingService){
+        Model.questions.clear();
+        Model.questions.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.OPEN_QUESTION));
+        Model.questions.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.CLOSED_QUESTION));
+    }
 
     public static LinkedList<AbstractQuestion> getQuestionsByType(Resources.Entities questionType){
         LinkedList<AbstractQuestion> questions=new LinkedList<>();
@@ -56,4 +65,11 @@ public class Model {
 
         return finalQuestions;
     }
+
+    public static void updateObservableQuestions(ParsingService parsingService){
+        Model.questionObservableList.clear();
+        Model.questionObservableList.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.OPEN_QUESTION));
+        Model.questionObservableList.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.CLOSED_QUESTION));
+    }
+
 }

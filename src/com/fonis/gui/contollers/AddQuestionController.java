@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import sample.Model;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,8 +25,8 @@ import java.util.ResourceBundle;
 
 public class AddQuestionController implements Initializable {
 
+    ParsingService parsingService = new ParsingService();
 
-    ParsingService service = new ParsingService();
     @FXML
     ComboBox questionType;
     @FXML
@@ -80,20 +81,20 @@ public class AddQuestionController implements Initializable {
         primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
     }
 
-    public void saveButtonClicked() {
+    public void saveButtonClicked(ActionEvent event) {
         AbstractQuestion newQuestion = getQuestionFromFields();
         if (newQuestion != null) {
-            Boolean backup = false;
-            if (backupBtn.isSelected()) {
-                backup = true;
-            }
             try {
-                service.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), backup);
-            } catch (Exception e) {
+                parsingService.addEntityToJsonFile(newQuestion, getQuestionEntityType(newQuestion), isBackupButtonSelected());
+                Model.updateObservableQuestions(parsingService);
+                cancelButtonClicked(event);
+            } catch (IllegalStateException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("");
                 alert.setContentText(e.getMessage());
                 alert.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -159,5 +160,21 @@ public class AddQuestionController implements Initializable {
             return Resources.QuestionDifficulty.MEDIUM;
         } else return Resources.QuestionDifficulty.HIGH;
     }
+
+    private boolean isBackupButtonSelected(){
+        if(backupBtn.isSelected()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private void returnToQuestionPreview(){
+
+
+
+    }
+
 }
 

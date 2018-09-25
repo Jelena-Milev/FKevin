@@ -3,6 +3,12 @@ package com.fonis.resources;
 import com.fonis.entities.ClosedQuestion;
 import com.fonis.entities.OpenQuestion;
 import com.fonis.entities.Participant;
+import sample.Main;
+
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.security.CodeSource;
 
 public class Resources {
 
@@ -87,5 +93,18 @@ public class Resources {
         public int getNumberOfQuestions(){
             return this.numberOfQuestions;
         }
+    }
+
+    public static String getAppLocation(){
+        CodeSource codeSource= Main.class.getProtectionDomain().getCodeSource();
+        String path=codeSource.getLocation().getPath();
+        File launcher=null;
+        try {
+            String decodedPath= URLDecoder.decode(path, "UTF-8");
+            launcher=new File(decodedPath);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return launcher.getParentFile().getPath();
     }
 }
