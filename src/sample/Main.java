@@ -24,7 +24,7 @@ public class Main extends Application implements Initializable {
         Resources.APP_LOCATION=Resources.getAppLocation();
         Model.updateModelQuestion(parsingService);
         Model.updateObservableQuestions(parsingService);
-        Parent root = FXMLLoader.load(getClass().getResource("../com/fonis/gui/fxmls/menu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/menu.fxml"));
         primaryStage.setTitle("FKevin");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

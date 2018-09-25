@@ -1,4 +1,4 @@
-package com.fonis.gui.contollers;
+package com.fonis.gui.controllers;
 
 import com.fonis.entities.AbstractQuestion;
 import com.fonis.entities.ClosedQuestion;

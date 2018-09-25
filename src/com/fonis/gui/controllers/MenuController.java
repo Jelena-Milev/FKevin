@@ -1,4 +1,4 @@
-package com.fonis.gui.contollers;
+package com.fonis.gui.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
