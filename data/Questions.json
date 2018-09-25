@@ -1,6 +1,356 @@
 {
-  "ClosedQuestions": [
-  ],
   "OpenQuestions": [
+    {
+      "questionText": "Koja kompanija proizvodi Mac racunare?",
+      "correctAnswer": "Apple;Epl",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Sta je izaslo prvo, iPhone ili iPad?",
+      "correctAnswer": "iPhone;i phone;ajfon",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koje cifre se koriste u binarnom sistemu?",
+      "correctAnswer": "1 i 0;0 i 1;1 0;0 1",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Kojom kombinacijom dugmica mozemo doci do Windows Task Managera?",
+      "correctAnswer": "Ctrl+Alt+Delete;Ctrl Alt Delete;Control Alt Delete;Ctrl Alt Delete",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja geometrijska figura oznacava uslov na dijagramu algoritma?",
+      "correctAnswer": "Romb",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "3KB\u003d__B?",
+      "correctAnswer": "3072",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Kojim znakom se dobija ostatak pri deljenju u programskom jeziku C?",
+      "correctAnswer": "%",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koji je broj funkcijskih dugmica na standardnoj tastaturi?",
+      "correctAnswer": "12;dvanaest;dvanest",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Originalni Counter Strike je mod za koju igricu?",
+      "correctAnswer": "Half Life;Halflife",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Originalna DOTA je mod za koju igricu?",
+      "correctAnswer": "Warcraft 3;Warcraft III;Vorkraft 3;Vorkraft III",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Ako funkcija napisana u Javi ne vraca nista, u njenom potpisu pre naziva pise se?",
+      "correctAnswer": "void",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja je trenutno aktuelna Sonijeva konzola?",
+      "correctAnswer": "ps4;plejstejsn 4;playstation 4",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja je trenutno aktuelna Majkrosoftova konzola?",
+      "correctAnswer": "Xbox One",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja je trenutno aktuelna Nintendova konzola?",
+      "correctAnswer": "Switch;Svic;Nintendo Switch",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja osnovna SQL naredba se koristi za brisanje odre?enih podataka?",
+      "correctAnswer": "DELETE",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja osnovna SQL naredba se koristi za uzimanje odre?enih podataka?",
+      "correctAnswer": "SELECT",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja osnovna SQL naredba se koristi za promenu odre?enih podataka?",
+      "correctAnswer": "UPDATE",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Sta je izaslo poslednje, iPhone, iPad, ili iPod?",
+      "correctAnswer": "ipad;ajped",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Sta je ve?e, ROM ili RAM memorija?",
+      "correctAnswer": "ram",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "i7 je procesor? tacno/netacno",
+      "correctAnswer": "tacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Šta je brže, DDR2 ili DDR3 RAM memorija?",
+      "correctAnswer": "ddr3",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Sta je starije, Python ili C?",
+      "correctAnswer": "C",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Sta je starije, Windows XP ili Windows Vista?",
+      "correctAnswer": "XP;Windows XP;Iks pe",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja je aktivna verzija Windows-a?",
+      "correctAnswer": "Windows 10;10",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "C++ je programski jezik? tacno/netacno",
+      "correctAnswer": "Tacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Photoshop je programski jezik? tacno/netacno",
+      "correctAnswer": "netacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Python je programski jezik? tacno/netacno",
+      "correctAnswer": "Tacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Linux je programski jezik? tacno/netacno",
+      "correctAnswer": "netacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "ROM memorija je prenosna? tacno/netacno",
+      "correctAnswer": "netacno",
+      "difficulty": "LOW"
+    },
+    {
+      "questionText": "Fleš memorija je prenosna? tacno/netacno",
+      "correctAnswer": "tacno",
+      "difficulty": "LOW"
+    }
+  ],
+  "ClosedQuestions": [
+    {
+      "possibleAnswers": [
+        "Procesor",
+        "Stampac",
+        "Graficka kartica"
+      ],
+      "questionText": "Koji od ponudjenih uredjaja je ulazni uredjaj?",
+      "correctAnswer": "Mis",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "PHP",
+        "Javascript",
+        "HTML"
+      ],
+      "questionText": "Koji programski jezik nije jezik za web programiranje?",
+      "correctAnswer": "C++",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "C",
+        "Visual Basic",
+        "C++"
+      ],
+      "questionText": "Koji programski jezik nije jezik za programiranje softvera?",
+      "correctAnswer": "HTML",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "1GB je 1024KB",
+        " 1MB je 1024GB",
+        "1KB je 1024MB"
+      ],
+      "questionText": "Zaokruziti tacan odgovor:",
+      "correctAnswer": "1GB je 1024MB",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "velicinu proreda",
+        "boldovan tekst",
+        "precrtan tekst"
+      ],
+      "questionText": "U html-u \u003ch2\u003e je tag za:",
+      "correctAnswer": "velicinu naslova",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Home Tool Markup Language",
+        "Hyperlinks and Text Markup Language",
+        " Hyper Tool Markup Language"
+      ],
+      "questionText": "HTML je skracenica za:",
+      "correctAnswer": "Hyper Text Markup Language",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "*",
+        "\u003c",
+        "#"
+      ],
+      "questionText": "Koji karakter se koristi u HTML-u kao oznaka zavrsnog taga:",
+      "correctAnswer": "/",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "DOS",
+        "Windows",
+        "MAC"
+      ],
+      "questionText": "Sta od ponudenog nije operativni sistem:",
+      "correctAnswer": "Python",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Fajl",
+        "Folder",
+        "Bag"
+      ],
+      "questionText": "Virus je kompjuterski:",
+      "correctAnswer": "Program",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Wario",
+        "Waluigi",
+        "Marmi"
+      ],
+      "questionText": "Kako se zove Super Mariov brat?",
+      "correctAnswer": "Luigi",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Audio fajl",
+        "Video fajl",
+        "Word fajl"
+      ],
+      "questionText": ".gif je ekstenzija za:",
+      "correctAnswer": "Image fajl",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "130",
+        "150",
+        "160"
+      ],
+      "questionText": "Koliki je limit karaktera za jedan tvit?",
+      "correctAnswer": "140",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Java",
+        "Python",
+        "Julliet"
+      ],
+      "questionText": "Koji od ponudjenih programskih jezika je najstariji?",
+      "correctAnswer": "C",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "GTA: Vice City",
+        "Call of Duty 2",
+        "FIFA 10"
+      ],
+      "questionText": "Iz koje igrice su šifre HESOYAM i AEZAKMI?",
+      "correctAnswer": "GTA: San Andreas",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "for()",
+        "while()",
+        "goto()"
+      ],
+      "questionText": "Da bi proverili neki uslov, koristimo:",
+      "correctAnswer": "if()",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Konami",
+        "Rockstar",
+        "Bethesda"
+      ],
+      "questionText": "Koja kompanija je napravila igricu FIFA?",
+      "correctAnswer": "EA",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Bethesda",
+        "EA",
+        "Rockstar"
+      ],
+      "questionText": "Koja kompanija je napravila igricu PES?",
+      "correctAnswer": "Konami",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Bethesda",
+        "Konami",
+        "EA"
+      ],
+      "questionText": "Koja kompanija je napravila igricu GTA?",
+      "correctAnswer": "Rockstar",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        ".txt",
+        ".doc",
+        ".xlsx"
+      ],
+      "questionText": "Koja od sledecih ekstenzija se koristi za slike?",
+      "correctAnswer": ".bmp",
+      "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        ".doc",
+        ".txt",
+        ".bmp"
+      ],
+      "questionText": "Koja od sledecih ekstenzija se koristi za excel fajlove?",
+      "correctAnswer": ".xlsx",
+      "difficulty": "LOW"
+    }
   ]
 }
