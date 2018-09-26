@@ -30,9 +30,6 @@ public class OpenQuestion extends AbstractQuestion {
         if (!validateDifficulty(this.difficulty)) {
             return false;
         }
-        if (!validateTextAttribute(this.guessedAnswer)) {
-            return false;
-        }
         return true;
     }
 

@@ -54,9 +54,6 @@ public class ClosedQuestion extends AbstractQuestion{
         if(!this.validatePossibleAnswers(this.possibleAnswers)){
             return false;
         }
-        if(!this.validateDifficulty(this.difficulty)){
-            return false;
-        }
         return true;
     }
 
