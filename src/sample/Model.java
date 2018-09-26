@@ -66,6 +66,14 @@ public class Model {
         return finalQuestions;
     }
 
+    public static int getNumberOfPoints(List<AbstractQuestion> questions){
+        int totalPoints = 0;
+        for(AbstractQuestion question : questions){
+            totalPoints += question.getPointsAfterValidation();
+        }
+        return totalPoints;
+    }
+
     public static void updateObservableQuestions(ParsingService parsingService){
         Model.questionObservableList.clear();
         Model.questionObservableList.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.OPEN_QUESTION));
