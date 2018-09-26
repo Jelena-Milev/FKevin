@@ -35,7 +35,8 @@ public class Model {
         return questions;
     }
 
-    public static List<AbstractQuestion> loadRoundQuestions(ParsingService parsingService){
+    public static List<AbstractQuestion> loadRoundQuestions(){
+        ParsingService parsingService = new ParsingService();
         List<AbstractQuestion> questions=parsingService.getEntitiesJsonAsList(Resources.Entities.OPEN_QUESTION);
         questions.addAll(parsingService.getEntitiesJsonAsList(Resources.Entities.CLOSED_QUESTION));
         List<AbstractQuestion> finalQuestions = new ArrayList<>();
@@ -49,10 +50,7 @@ public class Model {
         while(counter < Resources.TOTAL_NUMBER_OF_QUESTIONS){
             int randomIndex = random.nextInt(questions.size());
             AbstractQuestion question = questions.get(randomIndex);
-            if(!question.validateQuestion()){
-                questions.remove(question);
-                continue;
-            }
+
             if(question.getDifficulty() == Resources.QuestionDifficulty.LOW && low < Resources.QuestionDifficulty.LOW.getNumberOfQuestions()){
                 finalQuestions.add(question);
                 ++low;

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" gridLinesVisible="false" prefHeight="400.0" prefWidth="600.0"
+          stylesheets="@../style/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.121"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fonis.gui.controllers.QuizStartController">
+
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" percentWidth="25" />
+        <ColumnConstraints halignment="CENTER" percentWidth="25" />
+    </columnConstraints>
+
+    <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <image>
+            <Image url="@../style/FKevin2.png" />
+        </image>
+    </ImageView>
+    <JFXButton fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" prefHeight="27.0" prefWidth="105.0" styleClass="start-button" text="BACK" GridPane.rowIndex="3" />
+    <JFXButton fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="27.0" prefWidth="105.0" styleClass="start-button" text="START" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+
+
+</GridPane>

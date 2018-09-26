@@ -15,9 +15,6 @@ public class StartScreenController{
     @FXML
     private JFXButton exitButton;
 
-    @FXML
-    private JFXButton editorButton;
-
     public void onExitButtonClicked(){
         Stage stage = (Stage) this.exitButton.getScene().getWindow();
         stage.close();
@@ -32,10 +29,19 @@ public class StartScreenController{
     }
 
     public void onQuizButtonClicked(ActionEvent event) throws IOException {
-        Parent parent=FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/QuizStart.fxml"));
+        Parent parent=FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/quizStart.fxml"));
         Stage currentStage=(Stage) ((Node)event.getSource()).getScene().getWindow();
 
         currentStage.getScene().setRoot(parent);
         currentStage.show();
+    }
+
+    public void onFullscreenButtonClicked(ActionEvent event){
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        if(currentStage.isFullScreen()){
+            currentStage.setFullScreen(false);
+        }else{
+            currentStage.setFullScreen(true);
+        }
     }
 }

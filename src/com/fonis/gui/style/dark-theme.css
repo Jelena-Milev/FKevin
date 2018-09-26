@@ -22,3 +22,7 @@
     -fx-background-radius: 5px;
     -jfx-button-type: RAISED;
 }
+
+.jfx-progress-bar{
+    -fx-progress-color: -fx-secondary;
+}

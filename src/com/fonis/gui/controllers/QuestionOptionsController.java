@@ -91,7 +91,7 @@ public class QuestionOptionsController implements Initializable {
     }
 
     public void backButtonClicked(ActionEvent event) throws IOException {
-        Parent menuParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/startScreenV2.fxml"));
+        Parent menuParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/startScreen.fxml"));
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         primaryStage.getScene().setRoot(menuParent);
     }
