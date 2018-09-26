@@ -149,6 +149,81 @@
       "questionText": "Fleš memorija je prenosna? tacno/netacno",
       "correctAnswer": "tacno",
       "difficulty": "LOW"
+    },
+    {
+      "questionText": "Koja je najveca cifra u heksadecimalnom sistemu?",
+      "correctAnswer": "F",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Koja je vrednost heksadecimalne cifre E u dekadnom sistemu?",
+      "correctAnswer": "14",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Ako je \nx div 2 \u003d 5 i \nx mod 2 \u003d 1 \nonda je ceo broj x \u003d ___:",
+      "correctAnswer": "11",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Angular i React su najpoznatiji __________ frejmvorci.",
+      "correctAnswer": "Javascript;Javaskript",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Znak dodele vrednosti u programskom jeziku Pascal je?",
+      "correctAnswer": ":\u003d",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Šta je vece, heksadecimalno F, ili binarno 1000?",
+      "correctAnswer": "F",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Koja kompanija proizvodi Honor mobilne telefone?",
+      "correctAnswer": "Huawei;Huavej",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "questionText": "Kako se zove polu telefon polu konzola koju je Nokia proizvodila pocetkom 21og veka?",
+      "correctAnswer": "NGage;n gage;engejdz",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "Sta znaci skracenica OIKT?",
+      "correctAnswer": "Osnove Informaciono Komunikacionih Tehnologija",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "Nabroj jedan HTML tag koji ne mora da se zatvara:",
+      "correctAnswer": "\u003cbr\u003e;\u003chr\u003e;\u003csource\u003e;\u003clink\u003e;\u003cimg\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "Koliko bitova koristi IPv6 adresa?",
+      "correctAnswer": "128",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "IoT je skracenica za?",
+      "correctAnswer": "Internet of Things",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "U kom veku je osnovan Nintendo?",
+      "correctAnswer": "19.",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "Koja kompanija je kupila kompaniju Motorola?",
+      "correctAnswer": "Lenovo",
+      "difficulty": "HIGH"
+    },
+    {
+      "questionText": "HTML element za prelom reda je: ",
+      "correctAnswer": "\u003cbr\u003e;br",
+      "difficulty": "HIGH"
     }
   ],
   "ClosedQuestions": [
@@ -351,6 +426,556 @@
       "questionText": "Koja od sledecih ekstenzija se koristi za excel fajlove?",
       "correctAnswer": ".xlsx",
       "difficulty": "LOW"
+    },
+    {
+      "possibleAnswers": [
+        "Sql",
+        "C",
+        "Google Drive"
+      ],
+      "questionText": "Koji se od navedenih alata koristi za pravljenje sajtova, prvenstveno blogova?",
+      "correctAnswer": "Wordpress",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "end",
+        "finish",
+        "kevin"
+      ],
+      "questionText": "Koja komanda se koristi u programskom jeziku C za zavrsetak programa?",
+      "correctAnswer": "return",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Bill Gates",
+        "Ken Arnold",
+        "Dennis Ritchie"
+      ],
+      "questionText": "Sa kim je Steve Jobs osnovao kompaniju Apple?",
+      "correctAnswer": "Steve Wozniak",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Programer komapnije Intel",
+        "Jedan od tvoraca bluetooth tehnologije",
+        "Indijanski poglavica"
+      ],
+      "questionText": "Ko je bio Harald Bluetooth?",
+      "correctAnswer": "Danski kralj u 10. veku",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        " Mora biti jedinstven za svaku relaciju u bazi",
+        " Povezuje dve relacije",
+        "Ne mora postojati za svaki slog u relaciji"
+      ],
+      "questionText": "Primarni kljuc:",
+      "correctAnswer": "Mora biti jedinstven za svaki slog u relaciji",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Sega",
+        "Ubisoft",
+        "Eipix"
+      ],
+      "questionText": "Koja kompanija je kreirala igru Top Eleven Football Manager?",
+      "correctAnswer": "Nordeus",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "paran",
+        "pozitivan",
+        "negativan"
+      ],
+      "questionText": "Ako je \nx mod 2 \u003c\u003e 0 \nonda je ceo broj x: ",
+      "correctAnswer": "neparan",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "\u003ch6\u003e",
+        "\u003chead\u003e",
+        "\u003cheading\u003e"
+      ],
+      "questionText": "HTML element za najveci naslov je:",
+      "correctAnswer": "\u003ch1\u003e",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "C",
+        "Java",
+        "J2EE"
+      ],
+      "questionText": "Koji se od sledecih programskih jezika koristi za veštacku inteligenciju",
+      "correctAnswer": "Prolog",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "HTTP",
+        "POP3",
+        "SSH"
+      ],
+      "questionText": "Koji se protokol koristi za E-Mail?",
+      "correctAnswer": "SMTP",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Interpreter",
+        "Kompajler",
+        "Komparator"
+      ],
+      "questionText": "Koji kompjuterski program sluzi za prebacivanje asemblerskog jezika u masinski jezik?",
+      "correctAnswer": "Asembler",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Virtualnu adresu",
+        "Internet adresu",
+        "Memorijsku adresu"
+      ],
+      "questionText": "Svaki racunar prikacen na internet ima jedinstvenu:",
+      "correctAnswer": "IP adresu",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Apple",
+        "Microsoft",
+        "Xerox"
+      ],
+      "questionText": "Koja Americka kompanija je poznatija pod nazivom Big Blue?",
+      "correctAnswer": "IBM",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Mozila",
+        "Chrome",
+        "Internet Explorer"
+      ],
+      "questionText": "Koji od ponudjenih web browsera je najstariji?",
+      "correctAnswer": "Nexus",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Box",
+        "Tab",
+        "Field"
+      ],
+      "questionText": "Jedno polje u Excel-u se naziva:",
+      "correctAnswer": "Cell",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "00001111",
+        "10101010",
+        "01010011"
+      ],
+      "questionText": "Binarna vrednost heksadecimalnog A je?",
+      "correctAnswer": "00001010",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Strong Question Language",
+        "Structured Question Language",
+        "Strong Query Langugage"
+      ],
+      "questionText": "Skracenica SQL znaci:",
+      "correctAnswer": "Structured Query Language",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "SELECT Osobe.Ime",
+        "EXTRACT Ime FROM Osobe",
+        "EXTRACT FROM Osobe Ime"
+      ],
+      "questionText": "Kako pomocu SQL-a uzeti kolonu Ime iz tabele Osobe",
+      "correctAnswer": "SELECT Ime FROM Osobe",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "SELECT *.Osobe",
+        "SELECT FROM Osobe",
+        "SELECT all FROM Osobe"
+      ],
+      "questionText": "Kako pomocu SQL-a preuzeti sve kolone iz tabele Osobe",
+      "correctAnswer": "SELECT * FROM Osobe",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "SELECT * FROM Osobe WHERE Ime\u003c\u003e\u0027Petar\u0027",
+        "SELECT [all] FROM Persons WHERE Ime\u003d\u0027Petar\u0027",
+        "SELECT [all] FROM Persons WHERE Ime LIKE \u0027Petar\u0027"
+      ],
+      "questionText": "Kako pomocu SQL-a preuzeti sve podatke cije je Ime jednako Petar, u tabeli Osobe",
+      "correctAnswer": "SELECT * FROM Osobe WHERE Ime\u003d\u0027Petar\u0027",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "SELECT DIFFERENT",
+        "SELECT UNIQUE",
+        "SELECT DIFF"
+      ],
+      "questionText": "Koja SQL naredba uzima iskljucivo razlicite vrednosti?\n",
+      "correctAnswer": "SELECT DISTINCT",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "INSERT (\u0027Pera\u0027, \u0027Peric\u0027) INTO Osobe",
+        "INSERT VALUES (\u0027Pera\u0027, \u0027Peric\u0027) INTO Osobe",
+        "INSERT Osobe INTO VALUES (\u0027Pera\u0027, \u0027Peric\u0027)"
+      ],
+      "questionText": "Kako pomocu SQL-a ubaciti novi podatak u tabelu Osobe?",
+      "correctAnswer": "INSERT INTO Osobe VALUES (\u0027Pera\u0027, \u0027Peric\u0027)",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "DELETE Ime\u003d\u0027Petar\u0027 FROM Osobe",
+        "DELETE ROW Ime\u003d\u0027Petar\u0027 FROM Osobe",
+        "DELETE Ime\u003d\u003d\u0027Petar\u0027 FROM Osobe"
+      ],
+      "questionText": "Kako pomocu SQL-a obrisati podatke cije je Ime jednako Petar?",
+      "correctAnswer": " DELETE FROM Osobe WHERE Ime \u003d \u0027Petar\u0027",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Computer Style Sheets",
+        "Colorful Style Sheets",
+        "Creative Style Sheets"
+      ],
+      "questionText": "Sta znaci skracenica CSS?",
+      "correctAnswer": "Cascading Style Sheets",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "u \u003cbody\u003e segmentu",
+        "u \u003ctitle\u003e segmentu",
+        "u prvom redu"
+      ],
+      "questionText": "Gde se u HTML dokumentu povezuje sa CSS-om?",
+      "correctAnswer": "u \u003chead\u003e segmentu",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "equals()",
+        "string()",
+        "compare()"
+      ],
+      "questionText": "Kako uporediti dva stringa u programskom jeziku C?",
+      "correctAnswer": "strcmp()",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "int",
+        "none",
+        "no"
+      ],
+      "questionText": "Ako funkcija u C-u ne vraca nista, pise se:",
+      "correctAnswer": "void",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "string.h",
+        "ctype.h",
+        "lib.h"
+      ],
+      "questionText": "Funkcije printf i scanf su deo koje biblioteke?",
+      "correctAnswer": "stdio.h",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Kada se ne zna ta?an broj iteracija",
+        "Samo kod lista",
+        "Samo kod nizova"
+      ],
+      "questionText": "For petlja se koristi kada?",
+      "correctAnswer": "Kada se zna ta?an broj iteracija",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Kada se zna ta?an broj iteracija ",
+        "Samo kod lista",
+        "Samo kod nizova"
+      ],
+      "questionText": "While petlja se koristi kada?",
+      "correctAnswer": "Kada se ne zna ta?an broj iteracija",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Prenos podataka",
+        "Autentikaciju",
+        "Dizanje sistema"
+      ],
+      "questionText": "Framework se u racunaru koristi za:",
+      "correctAnswer": "Zastitu",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Windows XP",
+        "Windows 95",
+        "Windows ME"
+      ],
+      "questionText": "Koji od ponudjenih je najnoviji Windows?",
+      "correctAnswer": "Windows Vista",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        " SELECT * FROM Osobe WHERE Ime\u003d\u0027a\u0027",
+        "SELECT * FROM Osobe WHERE Ime\u003d\u0027%a%\u0027",
+        " SELECT * FROM Osobe WHERE Ime LIKE \u0027%a\u0027"
+      ],
+      "questionText": "Kako pomocu SQL-a preuzeti sve podatke cije je Ime pocinje sa a, u tabeli Osobe",
+      "correctAnswer": "SELECT * FROM Osobe WHERE Ime LIKE \u0027a%\u0027",
+      "difficulty": "MEDIUM"
+    },
+    {
+      "possibleAnswers": [
+        "Java",
+        "C",
+        "C++"
+      ],
+      "questionText": "U kojim od ponudjenih jezika NIJE napisan Android?",
+      "correctAnswer": "Python",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "Domain Name Server",
+        "Dynamic Name System",
+        "Dynamic Name Server"
+      ],
+      "questionText": "DNS je skracenica za:",
+      "correctAnswer": "Domain Name System",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "Transfer Control Protocol",
+        "Transfer Communication Protocol",
+        "Transmision Communication Protocol"
+      ],
+      "questionText": "TCP je skracenica za: ",
+      "correctAnswer": "Transmision Control Protocol*",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "Oreo",
+        "KitKat",
+        "Lollipop"
+      ],
+      "questionText": "Koja od sledecih poslastica NIJE naziv verzije Android operativnog sistema?",
+      "correctAnswer": "Mars",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003cbackground\u003eyellow\u003c/background\u003e",
+        "\u003cbody bg\u003d\"\"yellow\"\"\u003e",
+        "\u003cbody_background\u003d\"\"yellow\"\"\u003e"
+      ],
+      "questionText": "Ispravan HTML kod za boju pozadine je:",
+      "correctAnswer": "\u003cbody style\u003d\"\"background-color:yellow;\"\"\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003ca url\u003d\"\"http://www.w3schools.com\"\"\u003eW3Schools.com\u003c/a\u003e",
+        "\u003ca\u003ehttp://www.w3schools.com\u003c/a\u003e",
+        "\u003ca name\u003d\"\"http://www.w3schools.com\"\"\u003eW3Schools.com\u003c/a\u003e"
+      ],
+      "questionText": "Ispravan HTML kod za hiperlink je:",
+      "correctAnswer": "\u003ca href\u003d\"\"http://www.w3schools.com\"\"\u003eW3Schools\u003c/a\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003cul\u003e",
+        "\u003cdl\u003e",
+        "\u003clist\u003e"
+      ],
+      "questionText": "Koji tag u HTML-u se koristi za kreiranje numerisane liste:",
+      "correctAnswer": "\u003col\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003col\u003e",
+        "\u003cdl\u003e",
+        "\u003clist\u003e"
+      ],
+      "questionText": "Koji tag u HTML-u se koristi za kreiranje nenumerisane liste:",
+      "correctAnswer": "\u003cul\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003ctextinput type\u003d\"\"checkbox\"\"\u003e",
+        "\u003ccheck\u003e",
+        "\u003ccheckbox\u003e"
+      ],
+      "questionText": "Sta je ispravan HTML kod za kreiranje checkbox-a?",
+      "correctAnswer": " \u003cinput type\u003d\"\"checkbox\"\"\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "\u003cinput type\u003d\"\"textfl\"\"\u003e",
+        "\u003ctextinput type\u003d\"\"text\"\"\u003e\"",
+        "\u003ctextfield\u003e "
+      ],
+      "questionText": "Sta je ispravan HTML kod za kreiranje textfield-a?",
+      "correctAnswer": "\u003cinput type\u003d\"\"textfield\"\"\u003e",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "RAM memorije",
+        "ROM memorije",
+        "Kes memorije"
+      ],
+      "questionText": "Kes memorija radi sporije od?",
+      "correctAnswer": "Registara",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "Red",
+        "Stek",
+        "Lista"
+      ],
+      "questionText": "Folderi u operativnom sistemu su hijerarhijski organizovani kao:",
+      "correctAnswer": "Stablo",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "1980",
+        "1990",
+        "1972"
+      ],
+      "questionText": "Kada je izasao prvi x86 procesor?",
+      "correctAnswer": "1978",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "1000",
+        "500",
+        "100"
+      ],
+      "questionText": "Koliko programskih jezika je trenutno u upotrebi?",
+      "correctAnswer": "2000",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "HTML",
+        "CSS",
+        "IoT"
+      ],
+      "questionText": "Sta od ponudjenog predstavlja framework?",
+      "correctAnswer": "Bootstrap",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "printf(\"%d\",br);",
+        "printf(\"%d\",\u0026br);",
+        "scanf(\"%d\",\u0026br);"
+      ],
+      "questionText": "Koja od ponudjenih linija koda ima gresku?",
+      "correctAnswer": "scanf(\"%d\",br);",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "stop()",
+        "pause()",
+        "go()"
+      ],
+      "questionText": "Svaka nit mora da implementira koju metodu?",
+      "correctAnswer": " wait()",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "objekta ",
+        "objekta i imena klase",
+        "nijedno od ponudjenog"
+      ],
+      "questionText": "U objektnom programiranju, statickim metodama se pristupa preko?",
+      "correctAnswer": "imena klase",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "tip metode",
+        "ime metode",
+        "parametre metode"
+      ],
+      "questionText": "Apstraktna metoda ima samo:",
+      "correctAnswer": "potpis metode",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "klasa",
+        "drugi objekat",
+        "biblioteka kreiranja"
+      ],
+      "questionText": "Pri kreiranju instance objekta neke klase, poziva se:",
+      "correctAnswer": " konstruktor",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "table-border: 1px solid",
+        " tborder: 1px solid",
+        "table: 1px solid"
+      ],
+      "questionText": "Kako se dodaje ivica na tabeli putem CSS-a?",
+      "correctAnswer": " border: 1px solid",
+      "difficulty": "HIGH"
+    },
+    {
+      "possibleAnswers": [
+        "IBM",
+        "Google",
+        "Microsoft"
+      ],
+      "questionText": "Ko definise standarde na Webu?",
+      "correctAnswer": "W3C",
+      "difficulty": "HIGH"
     }
   ]
 }
