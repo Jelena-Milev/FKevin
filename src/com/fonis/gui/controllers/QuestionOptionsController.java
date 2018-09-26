@@ -13,12 +13,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sample.Model;
 
@@ -94,43 +91,24 @@ public class QuestionOptionsController implements Initializable {
     }
 
     public void backButtonClicked(ActionEvent event) throws IOException {
-
-        Parent menuParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/menu.fxml"));
-        Scene menuScene = new Scene(menuParent);
-
+        Parent menuParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/startScreenV2.fxml"));
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        primaryStage.setScene(menuScene);
-        primaryStage.show();
-
-        Rectangle2D windowDimension = Screen.getPrimary().getVisualBounds();
-        primaryStage.setX((windowDimension.getWidth() - primaryStage.getWidth()) / 2);
-        primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
+        primaryStage.getScene().setRoot(menuParent);
     }
 
     public void addButtonClicked(ActionEvent event) throws IOException {
 
         Parent addQuestionParent=FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/addQuestion.fxml"));
-        Scene addQuestionScene=new Scene(addQuestionParent);
-        Stage primaryStage=(Stage) (((Node)event.getSource()).getScene().getWindow());
-        primaryStage.setScene(addQuestionScene);
-        primaryStage.show();
 
-        Rectangle2D windowDimension=Screen.getPrimary().getVisualBounds();
-        primaryStage.setX((windowDimension.getWidth()-primaryStage.getWidth())/2);
-        primaryStage.setY((windowDimension.getHeight()-primaryStage.getHeight())/2);
+        Stage primaryStage=(Stage) (((Node)event.getSource()).getScene().getWindow());
+        primaryStage.getScene().setRoot(addQuestionParent);
     }
     
     public void editButtonClicked(ActionEvent event) throws IOException {
         if(questionsList.getSelectionModel().getSelectedItem()!=null) {
             Parent editQuestionParent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/editQuestion.fxml"));
-            Scene editQuestionScene = new Scene(editQuestionParent);
             Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-            primaryStage.setScene(editQuestionScene);
-            primaryStage.show();
-
-            Rectangle2D windowDimension = Screen.getPrimary().getVisualBounds();
-            primaryStage.setX((windowDimension.getWidth() - primaryStage.getWidth()) / 2);
-            primaryStage.setY((windowDimension.getHeight() - primaryStage.getHeight()) / 2);
+            primaryStage.getScene().setRoot(editQuestionParent);
         } else{
             Alert alert=new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
