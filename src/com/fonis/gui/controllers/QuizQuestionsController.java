@@ -7,13 +7,19 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.util.Duration;
 import sample.Model;
 
 import java.net.URL;
@@ -74,7 +80,8 @@ public class QuizQuestionsController implements Initializable{
         AbstractQuestion question = this.questions.get(this.currentIndex);
         this.resetComponents();
 
-        this.questionText.setText(question.getQuestionText());
+        this.loadQuestionText(question);
+//        this.questionText.setText(question.getQuestionText());
         if(question instanceof OpenQuestion){
             this.loadOpenQuestion();
         }else{
@@ -82,6 +89,26 @@ public class QuizQuestionsController implements Initializable{
         }
 
         this.answerOne.setDisableVisualFocus(true);
+    }
+
+    private void loadQuestionText(AbstractQuestion question){
+        String questionText = question.getQuestionText();
+
+        final IntegerProperty i = new SimpleIntegerProperty(0);
+        Timeline timeline = new Timeline();
+        KeyFrame keyFrame = new KeyFrame(
+                Duration.millis(20),
+                event -> {
+                    if (i.get() > questionText.length()) {
+                        timeline.stop();
+                    } else {
+                        this.questionText.setText(questionText.substring(0, i.get()));
+                        i.set(i.get() + 1);
+                    }
+                });
+        timeline.getKeyFrames().add(keyFrame);
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
     private void loadOpenQuestion(){
