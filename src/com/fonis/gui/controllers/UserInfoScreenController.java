@@ -61,7 +61,6 @@ public class UserInfoScreenController implements Initializable {
     }
 
     public void onEndButtonClicked(ActionEvent event) throws IOException {
-        System.out.println(totalPoints);
         this.saveParticipantInfo();
         this.parsingService.addEntityToJsonFile(this.participant, Resources.Entities.PARTICIPANT, true);
         this.showThanksScene(event);

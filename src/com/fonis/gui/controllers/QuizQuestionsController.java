@@ -208,7 +208,6 @@ public class QuizQuestionsController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/userInfoScreen.fxml"));
         Stage currentStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         currentStage.getScene().setRoot(loader.load());
-        System.out.println(totalPoints);
         ((UserInfoScreenController) loader.getController()).setTotalPoints(totalPoints);
     }
 }
