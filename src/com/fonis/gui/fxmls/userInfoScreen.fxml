@@ -14,7 +14,7 @@
    <children>
        <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
            <image>
-               <Image url="@../style/FKevin2.png" />
+               <Image url="@../style/logo.png" />
            </image>
        </ImageView>
       <HBox alignment="BOTTOM_CENTER">

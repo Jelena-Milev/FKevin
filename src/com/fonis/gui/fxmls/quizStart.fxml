@@ -18,7 +18,7 @@
 
     <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
         <image>
-            <Image url="@../style/FKevin2.png" />
+            <Image url="@../style/logo.png" />
         </image>
     </ImageView>
     <JFXButton fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" prefHeight="27.0" prefWidth="105.0" styleClass="start-button" text="BACK" GridPane.rowIndex="3" />

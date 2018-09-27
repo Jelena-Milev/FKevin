@@ -20,7 +20,7 @@
 
     <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
         <image>
-            <Image url="@../style/FKevin2.png" />
+            <Image url="@../style/logo.png" />
         </image>
     </ImageView>
     <MaterialIconView glyphName="GROUP_WORK" size="10em" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
