@@ -150,7 +150,10 @@ public class QuizQuestionsController implements Initializable{
 
         this.updateProgressBar();
 
-        if(currentIndex == this.questions.size() - 1){
+        if(this.currentIndex == this.questions.size() - 2){
+            this.nextButton.setText("FINISH");
+        }
+        if(this.currentIndex == this.questions.size() - 1){
             System.out.println("MADE IT TO THE END");
             // Calculate points
             int totalPoints = Model.getNumberOfPoints(this.questions);
