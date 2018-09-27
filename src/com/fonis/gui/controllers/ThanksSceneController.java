@@ -1,8 +1,12 @@
 package com.fonis.gui.controllers;
 
+import com.fonis.entities.AbstractQuestion;
+import com.fonis.entities.OpenQuestion;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ThanksSceneController{
+public class ThanksSceneController implements Initializable{
 
 //    #TODO add delay
 
@@ -24,7 +28,10 @@ public class ThanksSceneController{
         Parent parent= FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/startScreen.fxml"));
         Stage currentStage= (Stage) ((Node)event.getSource()).getScene().getWindow();
         currentStage.getScene().setRoot(parent);
-        currentStage.show();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+
+    }
 }

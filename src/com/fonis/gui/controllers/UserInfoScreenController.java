@@ -5,6 +5,7 @@ import com.fonis.resources.Resources;
 import com.fonis.services.ParsingService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.PauseTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
@@ -13,9 +14,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +36,8 @@ public class UserInfoScreenController implements Initializable {
     private JFXTextField phoneNumber;
     @FXML
     private JFXButton endBtn;
+    @FXML
+    private Label message;
 
     private Participant participant;
     private ParsingService parsingService=new ParsingService();
@@ -72,11 +77,32 @@ public class UserInfoScreenController implements Initializable {
     }
 
     private void showThanksScene(ActionEvent event) throws IOException {
-        Parent parent= FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/thanksScene.fxml"));
+        this.setEndState();
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(10));
+        pauseTransition.setOnFinished(pauseEvent -> {
+            try{
+                this.changeToStartScene(event);
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        });
+        pauseTransition.play();
+    }
+
+    private void setEndState(){
+        this.message.setText("Thanks for playing FKevin! Your had " + this.totalPoints + " points!");
+        this.name.setVisible(false);
+        this.surname.setVisible(false);
+        this.email.setVisible(false);
+        this.phoneNumber.setVisible(false);
+        this.endBtn.setVisible(false);
+    }
+
+    private void changeToStartScene(ActionEvent event) throws IOException{
+        Parent parent= FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/quizStart.fxml"));
         Stage currentStage=(Stage) ((Node)event.getSource()).getScene().getWindow();
 
         currentStage.getScene().setRoot(parent);
-        currentStage.show();
     }
 
 }

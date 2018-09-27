@@ -19,7 +19,7 @@
        </ImageView>
       <HBox alignment="BOTTOM_CENTER">
          <children>
-            <Label alignment="CENTER" text="Enter your details below in order to get information about results" textAlignment="CENTER">
+            <Label fx:id="message" alignment="CENTER" text="Enter your details below in order to get information about results" textAlignment="CENTER">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
