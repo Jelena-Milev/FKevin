@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -14,35 +15,62 @@
 
 <GridPane alignment="CENTER" gridLinesVisible="false" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fonis.gui.controllers.QuizQuestionsController">
 
-   <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+   <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
       <image>
          <Image url="@../style/FKevin2.png" />
       </image>
    </ImageView>
    <TextArea fx:id="questionText" editable="false" prefHeight="200.0" prefWidth="400.0" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
       <font>
-         <Font name="Times New Roman" size="13.0" />
+         <Font name="Times New Roman" size="30.0" />
       </font>
+      <effect>
+         <Blend />
+      </effect>
    </TextArea>
-   <JFXTextField fx:id="guessedAnswer" prefHeight="50.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" alignment="CENTER" />
-   <JFXToggleButton fx:id="answerOne" mnemonicParsing="false" onAction="#buttonToggled" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-   <JFXToggleButton fx:id="answerTwo" mnemonicParsing="false" onAction="#buttonToggled" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-   <JFXToggleButton fx:id="answerThree" mnemonicParsing="false" onAction="#buttonToggled" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-   <JFXToggleButton fx:id="answerFour" mnemonicParsing="false" onAction="#buttonToggled" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-   <JFXButton fx:id="nextButton" onAction="#onNextButtonClicked" styleClass="start-button" text="NEXT QUESTION" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+   <JFXTextField fx:id="guessedAnswer" alignment="CENTER" prefHeight="50.0" promptText="Your answer: " GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <font>
+         <Font name="Times New Roman" size="25.0" />
+      </font></JFXTextField>
+   <JFXToggleButton fx:id="answerOne" alignment="CENTER_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonToggled" textFill="green" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+      <font>
+         <Font name="Times New Roman" size="22.0" />
+      </font>
+   </JFXToggleButton>
+   <JFXToggleButton fx:id="answerTwo" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#buttonToggled" textFill="green" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+      <font>
+         <Font name="Times New Roman" size="22.0" />
+      </font>
+   </JFXToggleButton>
+   <JFXToggleButton fx:id="answerThree" alignment="CENTER_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonToggled" textFill="green" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="3">
+      <font>
+         <Font name="Times New Roman" size="22.0" />
+      </font>
+   </JFXToggleButton>
+   <JFXToggleButton fx:id="answerFour" alignment="CENTER_LEFT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#buttonToggled" textFill="green" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+      <font>
+         <Font name="Times New Roman" size="22.0" />
+      </font>
+   </JFXToggleButton>
+   <JFXButton fx:id="nextButton" onAction="#onNextButtonClicked" styleClass="start-button" text="NEXT QUESTION" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <font>
+         <Font name="Times New Roman" size="25.0" />
+      </font></JFXButton>
    <JFXButton disable="true" GridPane.rowIndex="5" /> <!-- Hack for empty row, #TODO do it the right way -->
-   <JFXProgressBar fx:id="progressBar" prefWidth="400.0" prefHeight="25" progress="0.0" GridPane.rowIndex="6" GridPane.columnSpan="2"/>
+   <JFXProgressBar fx:id="progressBar" minWidth="-Infinity" prefHeight="25" prefWidth="400.0" progress="0.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 
 
    <columnConstraints>
-      <ColumnConstraints halignment="CENTER" percentWidth="25" />
-      <ColumnConstraints halignment="CENTER" percentWidth="25" />
+      <ColumnConstraints halignment="LEFT" percentWidth="25" />
+      <ColumnConstraints halignment="LEFT" percentWidth="25" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
       <RowConstraints />
-      <RowConstraints prefHeight="50.0" />
-      <RowConstraints prefHeight="50.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
    </rowConstraints>
 

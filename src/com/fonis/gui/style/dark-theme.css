@@ -23,6 +23,26 @@
     -jfx-button-type: RAISED;
 }
 
-.jfx-progress-bar{
-    -fx-progress-color: -fx-secondary;
+.jfx-progress-bar > .bar{
+    -fx-background-color: -fx-secondary;
+}
+
+.text-area *.text {
+    -fx-text-alignment: center;
+    -fx-text-fill: -fx-primary-text;
+}
+
+.text-area{
+    -fx-control-inner-background: -fx-primary;
+    -fx-border-color: -fx-primary-text;
+}
+
+.jfx-toggle-button{
+    -fx-text-fill: -fx-primary-text;
+    -jfx-toggle-color: -fx-secondary;
+}
+
+.jfx-text-field{
+    -fx-text-fill: -fx-primary-text;
+    -jfx-focus-color: -fx-secondary;
 }

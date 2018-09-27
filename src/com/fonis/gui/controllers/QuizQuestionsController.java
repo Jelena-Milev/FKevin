@@ -11,6 +11,8 @@ import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import sample.Model;
 
@@ -62,6 +64,8 @@ public class QuizQuestionsController implements Initializable{
     public void initialize(URL location, ResourceBundle resources){
         this.resetComponents();
         this.bindNextButton();
+        this.questionText.setFocusTraversable(false);
+        this.questionText.setMouseTransparent(true);
         this.questions = Model.loadRoundQuestions();
         this.displayQuestion();
     }
@@ -76,6 +80,8 @@ public class QuizQuestionsController implements Initializable{
         }else{
             this.loadClosedQuestion((ClosedQuestion) question);
         }
+
+        this.answerOne.setDisableVisualFocus(true);
     }
 
     private void loadOpenQuestion(){
