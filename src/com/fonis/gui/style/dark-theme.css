@@ -1,7 +1,8 @@
 * {
-    -fx-primary: #2A2E37;
+    -fx-primary: #0d3e5e;
     -fx-secondary: #E78200;
     -fx-primary-text: #B2B2B2;
+    -fx-toggle-text: #ff9e1f;
 }
 
 .root{
@@ -45,4 +46,9 @@
 .jfx-text-field{
     -fx-text-fill: -fx-primary-text;
     -jfx-focus-color: -fx-secondary;
+    -fx-prompt-text-fill: -fx-primary-text;
+}
+
+.label{
+    -fx-text-fill: -fx-primary-text;
 }
