@@ -32,20 +32,25 @@ public class UserInfoScreenController implements Initializable {
     @FXML
     private JFXTextField phoneNumber;
     @FXML
-    private
-    JFXButton endBtn;
+    private JFXButton endBtn;
+
     private Participant participant;
     private ParsingService parsingService=new ParsingService();
+
+    private int totalPoints;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.bindEndButton();
     }
+
     private void saveParticipantInfo() {
         this.participant = new Participant();
-        participant.setName(this.name.getText());
-        participant.setSurname(this.surname.getText());
-        participant.setEmail(this.email.getText());
-        participant.setPhoneNumber(this.phoneNumber.getText());
+        this.participant.setName(this.name.getText());
+        this.participant.setSurname(this.surname.getText());
+        this.participant.setEmail(this.email.getText());
+        this.participant.setPhoneNumber(this.phoneNumber.getText());
+        this.participant.setTotalPoints(this.totalPoints);
     }
 
     private void bindEndButton() {
@@ -56,10 +61,15 @@ public class UserInfoScreenController implements Initializable {
     }
 
     public void onEndButtonClicked(ActionEvent event) throws IOException {
+        System.out.println(totalPoints);
         this.saveParticipantInfo();
         this.parsingService.addEntityToJsonFile(this.participant, Resources.Entities.PARTICIPANT, true);
         this.showThanksScene(event);
 
+    }
+
+    public void setTotalPoints(int totalPoints){
+        this.totalPoints = totalPoints;
     }
 
     private void showThanksScene(ActionEvent event) throws IOException {

@@ -185,14 +185,8 @@ public class QuizQuestionsController implements Initializable {
             this.nextButton.setText("FINISH");
         }
         if (this.currentIndex == this.questions.size() - 1) {
-            System.out.println("MADE IT TO THE END");
-            // Calculate points
             int totalPoints = Model.getNumberOfPoints(this.questions);
-
-            // Save points somewhere, possibly Static int in Model?
-
-            // Switch to user info screen
-            this.switchToUserInfoScreen(event);
+            this.switchToUserInfoScreen(event, totalPoints);
         } else {
             ++this.currentIndex;
             this.displayQuestion();
@@ -210,11 +204,11 @@ public class QuizQuestionsController implements Initializable {
         return false;
     }
 
-    private void switchToUserInfoScreen(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/userInfoScreen.fxml"));
+    private void switchToUserInfoScreen(ActionEvent event, int totalPoints) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("com/fonis/gui/fxmls/userInfoScreen.fxml"));
         Stage currentStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-
-        currentStage.getScene().setRoot(parent);
-        currentStage.show();
+        currentStage.getScene().setRoot(loader.load());
+        System.out.println(totalPoints);
+        ((UserInfoScreenController) loader.getController()).setTotalPoints(totalPoints);
     }
 }
