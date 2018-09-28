@@ -10,18 +10,24 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="30.0" stylesheets="@../style/dark-theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fonis.gui.controllers.UserInfoScreenController">
+
+<VBox fx:id="participantInfo" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" stylesheets="@../style/dark-theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fonis.gui.controllers.UserInfoScreenController">
    <children>
-       <ImageView fitHeight="202.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+      <Label fx:id="thanksMessage" alignment="CENTER" textAlignment="CENTER">
+         <font>
+            <Font name="Lohit Tamil" size="24.0" />
+         </font>
+      </Label>
+       <ImageView fx:id="fKevin" fitHeight="173.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
            <image>
-               <Image url="@../style/logo.png" />
+               <Image url="@../style/logoSmall.png" />
            </image>
        </ImageView>
       <HBox alignment="BOTTOM_CENTER">
          <children>
             <Label fx:id="message" alignment="CENTER" text="Enter your details below in order to get information about results" textAlignment="CENTER">
                <font>
-                  <Font name="SansSerif Bold" size="24.0" />
+                  <Font name="Lohit Tamil" size="24.0" />
                </font>
             </Label>
          </children>
@@ -33,7 +39,7 @@
          <children>
             <JFXTextField fx:id="name" alignment="CENTER" prefHeight="50.0" promptText="Name: ">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="Lohit Tamil" size="18.0" />
                </font>
             </JFXTextField>
          </children>
@@ -48,7 +54,7 @@
          <children>
             <JFXTextField fx:id="surname" alignment="CENTER" prefWidth="150.0" promptText="Surname:">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="Lohit Tamil" size="18.0" />
                </font>
             </JFXTextField>
          </children>
@@ -63,7 +69,7 @@
          <children>
             <JFXTextField fx:id="email" alignment="CENTER" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" promptText="E-mail:">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="Lohit Tamil" size="19.0" />
                </font>
             </JFXTextField>
          </children>
@@ -78,7 +84,7 @@
          <children>
             <JFXTextField fx:id="phoneNumber" alignment="CENTER" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" promptText="Phone number (optional)">
                <font>
-                  <Font name="SansSerif Regular" size="20.0" />
+                  <Font name="Lohit Tamil" size="18.0" />
                </font>
             </JFXTextField>
          </children>
@@ -91,9 +97,9 @@
       </VBox>
       <HBox alignment="CENTER">
          <children>
-            <JFXButton fx:id="endBtn" onAction="#onEndButtonClicked" prefHeight="50.0" prefWidth="193.0" styleClass="start-button" text="SUBMIT">
+            <JFXButton fx:id="endBtn" onAction="#onEndButtonClicked" prefHeight="50.0" prefWidth="193.0" styleClass="start-button" text="SUBMIT" textAlignment="CENTER">
                <font>
-                  <Font name="SansSerif Regular" size="24.0" />
+                  <Font name="Lohit Tamil" size="20.0" />
                </font>
             </JFXButton>
          </children>

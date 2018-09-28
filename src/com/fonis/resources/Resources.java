@@ -29,6 +29,8 @@ public class Resources {
     private static int numberOfMediumQuestions = 4;
     private static int numberOfHighQuestions = 3;
 
+    public static int maxPoints=(lowQuestionPoints*numberOfLowQuestions) + (mediumQuestionPoints*numberOfMediumQuestions) + (highQuestionPoints*numberOfHighQuestions);
+
     public static final int TOTAL_NUMBER_OF_QUESTIONS = numberOfLowQuestions + numberOfMediumQuestions + numberOfHighQuestions;
 
 
