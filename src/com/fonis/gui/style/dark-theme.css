@@ -6,7 +6,8 @@
 }
 
 .root{
-    -fx-background-color: -fx-primary;
+    -fx-background-image: url("backgroundUp.png");
+    -fx-background-size: 100% 100%;
 }
 
 .glyph-icon{
@@ -52,3 +53,4 @@
 .label{
     -fx-text-fill: -fx-primary-text;
 }
+

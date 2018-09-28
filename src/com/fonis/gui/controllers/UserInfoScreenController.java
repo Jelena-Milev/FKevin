@@ -103,7 +103,7 @@ public class UserInfoScreenController implements Initializable {
         this.infoBox.setVisible(false);
         this.messagesBox.setVisible(true);
         this.showEndMessage();
-        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(12));
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(7));
         pauseTransition.setOnFinished(pauseEvent -> {
             try{
                 this.changeToStartScene(event);
@@ -117,32 +117,31 @@ public class UserInfoScreenController implements Initializable {
 
     private void showEndMessage(){
         this.thanksLogo.setVisible(false);
-        PauseTransition pauseTransition1 = new PauseTransition(Duration.millis(1700));
+        PauseTransition pauseTransition1 = new PauseTransition(Duration.millis(860));
         pauseTransition1.setOnFinished(pauseEvent -> {
             this.thanksLogo.setVisible(true);
         });
 
-        PauseTransition pauseTransition2 = new PauseTransition(Duration.millis(1800));
+        PauseTransition pauseTransition2 = new PauseTransition(Duration.millis(960));
         pauseTransition2.setOnFinished(pauseEvent -> {
-            showMessage(this.congratsMessage, "Congratulations! You won ", 70);
-//                    + this.totalPoints +" / "+ Resources.maxPoints + " points!");
+            showMessage(this.congratsMessage, "Congratulations! You scored ", 40);
         });
 
-        PauseTransition pauseTransition3 = new PauseTransition(Duration.millis(3600));
+        PauseTransition pauseTransition3 = new PauseTransition(Duration.millis(2180));
         pauseTransition3.setOnFinished(pauseEvent -> {
-            showMessage(this.score, this.totalPoints +" / "+ Resources.maxPoints, 70);
+            showMessage(this.score, this.totalPoints +" / "+ Resources.maxPoints, 40);
         });
 
-        PauseTransition pauseTransition4 = new PauseTransition(Duration.millis(4200));
+        PauseTransition pauseTransition4 = new PauseTransition(Duration.millis(2560));
         pauseTransition4.setOnFinished(pauseEvent -> {
-            showMessage(this.pointsMessage, "points!", 60);
+            showMessage(this.pointsMessage, "points!", 40);
         });
 
         pauseTransition1.play();
         pauseTransition2.play();
         pauseTransition3.play();
         pauseTransition4.play();
-        showMessage(this.thanksMessage, "Thanks for playing ", 50);
+        showMessage(this.thanksMessage, "Thanks for playing ", 40);
     }
 
     private void changeToStartScene(ActionEvent event) throws IOException{

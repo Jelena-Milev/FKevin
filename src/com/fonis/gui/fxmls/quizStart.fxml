@@ -20,14 +20,14 @@
     </columnConstraints>
    <children>
    
-       <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+       <ImageView fx:id="logo" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
            <image>
                <Image url="@../style/logo.png" />
            </image>
        </ImageView>
        <JFXButton fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="65.0" prefWidth="247.0" styleClass="start-button" text="START" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2">
          <font>
-            <Font name="Laksaman" size="20.0" />
+            <Font name="Lohit Tamil" size="28.0"/>
          </font>
       </JFXButton>
    </children>

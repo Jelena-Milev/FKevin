@@ -101,7 +101,7 @@ public class QuizQuestionsController implements Initializable {
         final IntegerProperty i = new SimpleIntegerProperty(0);
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
-                Duration.millis(20),
+                Duration.millis(40),
                 event -> {
                     if (i.get() > questionText.length()) {
                         timeline.stop();
