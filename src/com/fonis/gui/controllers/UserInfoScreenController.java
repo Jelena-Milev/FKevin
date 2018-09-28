@@ -124,25 +124,25 @@ public class UserInfoScreenController implements Initializable {
 
         PauseTransition pauseTransition2 = new PauseTransition(Duration.millis(1800));
         pauseTransition2.setOnFinished(pauseEvent -> {
-            showMessage(this.congratsMessage, "Congratulation! You won ");
+            showMessage(this.congratsMessage, "Congratulations! You won ", 70);
 //                    + this.totalPoints +" / "+ Resources.maxPoints + " points!");
         });
 
         PauseTransition pauseTransition3 = new PauseTransition(Duration.millis(3600));
         pauseTransition3.setOnFinished(pauseEvent -> {
-            showMessage(this.score, this.totalPoints +" / "+ Resources.maxPoints);
+            showMessage(this.score, this.totalPoints +" / "+ Resources.maxPoints, 70);
         });
 
         PauseTransition pauseTransition4 = new PauseTransition(Duration.millis(4200));
         pauseTransition4.setOnFinished(pauseEvent -> {
-            showMessage(this.pointsMessage, "points!");
+            showMessage(this.pointsMessage, "points!", 60);
         });
 
         pauseTransition1.play();
         pauseTransition2.play();
         pauseTransition3.play();
         pauseTransition4.play();
-        showMessage(this.thanksMessage, "Thanks for playing ");
+        showMessage(this.thanksMessage, "Thanks for playing ", 50);
     }
 
     private void changeToStartScene(ActionEvent event) throws IOException{
@@ -152,11 +152,11 @@ public class UserInfoScreenController implements Initializable {
         currentStage.getScene().setRoot(parent);
     }
 
-    private void showMessage(Label label, String text) {
+    private void showMessage(Label label, String text, int millis) {
         final IntegerProperty i = new SimpleIntegerProperty(0);
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
-                Duration.millis(70),
+                Duration.millis(millis),
                 event -> {
                     if (i.get() > text.length()) {
                         timeline.stop();
