@@ -20,6 +20,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -44,7 +45,18 @@ public class UserInfoScreenController implements Initializable {
     @FXML
     private Label thanksMessage;
     @FXML
+    private Label congratsMessage;
+    @FXML
+    private Label score;
+    @FXML
+    private Label pointsMessage;
+    @FXML
     ImageView fKevin;
+    @FXML
+    ImageView thanksLogo;
+
+    @FXML private VBox messagesBox;
+    @FXML private VBox infoBox;
 
     private Participant participant;
     private ParsingService parsingService=new ParsingService();
@@ -53,7 +65,10 @@ public class UserInfoScreenController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.thanksMessage.setText("");
+        this.clearMessagesComponents();
+        this.messagesBox.setVisible(false);
+        this.thanksLogo.setVisible(false);
+        this.infoBox.setVisible(true);
         this.bindEndButton();
     }
 
@@ -85,8 +100,10 @@ public class UserInfoScreenController implements Initializable {
     }
 
     private void showThanksScene(ActionEvent event) throws IOException {
-        this.setEndState();
-        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(13));
+        this.infoBox.setVisible(false);
+        this.messagesBox.setVisible(true);
+        this.showEndMessage();
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(12));
         pauseTransition.setOnFinished(pauseEvent -> {
             try{
                 this.changeToStartScene(event);
@@ -97,14 +114,35 @@ public class UserInfoScreenController implements Initializable {
         pauseTransition.play();
     }
 
-    private void setEndState(){
-        this.name.setVisible(false);
-        this.surname.setVisible(false);
-        this.email.setVisible(false);
-        this.phoneNumber.setVisible(false);
-        this.endBtn.setVisible(false);
-        this.message.setText("");
-        this.showEndMessage();
+
+    private void showEndMessage(){
+        this.thanksLogo.setVisible(false);
+        PauseTransition pauseTransition1 = new PauseTransition(Duration.millis(1700));
+        pauseTransition1.setOnFinished(pauseEvent -> {
+            this.thanksLogo.setVisible(true);
+        });
+
+        PauseTransition pauseTransition2 = new PauseTransition(Duration.millis(1800));
+        pauseTransition2.setOnFinished(pauseEvent -> {
+            showMessage(this.congratsMessage, "Congratulation! You won ");
+//                    + this.totalPoints +" / "+ Resources.maxPoints + " points!");
+        });
+
+        PauseTransition pauseTransition3 = new PauseTransition(Duration.millis(3600));
+        pauseTransition3.setOnFinished(pauseEvent -> {
+            showMessage(this.score, this.totalPoints +" / "+ Resources.maxPoints);
+        });
+
+        PauseTransition pauseTransition4 = new PauseTransition(Duration.millis(4200));
+        pauseTransition4.setOnFinished(pauseEvent -> {
+            showMessage(this.pointsMessage, "points!");
+        });
+
+        pauseTransition1.play();
+        pauseTransition2.play();
+        pauseTransition3.play();
+        pauseTransition4.play();
+        showMessage(this.thanksMessage, "Thanks for playing ");
     }
 
     private void changeToStartScene(ActionEvent event) throws IOException{
@@ -132,15 +170,11 @@ public class UserInfoScreenController implements Initializable {
         timeline.play();
     }
 
-    private void showEndMessage(){
-        this.fKevin.setVisible(false);
-        PauseTransition pauseTransition = new PauseTransition(Duration.millis(1700));
-        pauseTransition.setOnFinished(pauseEvent -> {
-            this.fKevin.setVisible(true);
-            showMessage(message, "Congratulation! You won "+ this.totalPoints +" / "+ Resources.maxPoints + " points!");
-        });
-        pauseTransition.play();
-        showMessage(this.thanksMessage, "Thanks for playing ");
+    private void clearMessagesComponents(){
+        this.thanksMessage.setText("");
+        this.congratsMessage.setText("");
+        this.score.setText("");
+        this.pointsMessage.setText("");
     }
 
 }
